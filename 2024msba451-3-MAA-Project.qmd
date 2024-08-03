@@ -1,0 +1,156 @@
+---
+title: "MAA Presentation Video"
+subtitle: "UCSD MGTA 451-Marketing"
+author: "Kenneth C. Wilbur"
+output: html_document
+format: 
+  revealjs:
+    auto-stretch: false 
+    theme: default
+slide-number: c 
+editor_options: 
+  chunk_output_type: inline 
+---
+
+## Learning Objectives
+
+1. Practice reading analytics papers
+
+2. Practice communicating analytics frameworks
+
+3. Exposure to cutting-edge analytics at leading companies
+
+4. Practice critiquing, questioning, understanding analytics frameworks 
+
+5. Get to know each other better
+
+## WTF is a "paper"
+
+- For centuries scientists communicated using "papers"
+
+          - The basic format has stubbornly survived digitization, with improvements
+
+- Scientists write papers to (i) communicate results, (ii) get feedback, (iii) get credit, and/or (iv) improve the world in some small way
+
+- In analytics, sometimes we write papers to get clients or users
+
+## What's in a paper?
+
+1. Problem to solve or questions to answer
+
+          - "Problem to solve" : Engineering
+          - "Questions to answer" : Science
+
+2. Brief review of earlier relevant works
+
+          - Can help contextualize the proposed solution
+
+3. The proposed solution
+
+4. How we tested or implemented the proposed solution
+
+5. Results or discussion of learnings
+
+6. Untested opinions 
+
+          - Further questions/problems that our new knowledge has enabled us to ask
+          - If we're intellectually honest, some caveats and limitations 
+
+## Why do I need to read "papers"?
+
+- Analytics frontier is constantly moving
+
+          - Prof. retools every 5 years or so
+          
+- Valuable new tools often appear with accompanying papers to explain them
+
+          - Paper is usually the clearest resource if you know how to read 
+          - Paper is written by person with most expertise
+
+- Paper writing correlates with high skill and commitment
+
+- You'll read many papers in MSBA 
+
+- Reading papers is a skill that will improve with experience
+
+          - Let's get started
+
+## How to do this project well
+
+- Pick a MAA that interests you, based on company and/or topic
+
+- Sincere effort to understand your MAA
+
+          - It's OK if you don't understand all finer details
+          - Take the authors' word at face value and try to get the big picture
+          - I expect this project to stretch you
+          - Discomfort signals potential growth, stay calm
+
+- Sincere effort to explain to classmates
+
+- Intellectual honesty & humility, but don't be intimidated
+
+- Some original content that was directly inspired by the MAA
+
+
+
+## Next Steps
+
+1. Let's finalize project parameters
+
+2. Assign, form or finalize teams & MAAs
+
+3. Quick read of the paper
+
+4. Think about presentation structure and team roles, let's discuss
+
+5. Careful read of the paper, presentation development 
+
+6. Practice & record video
+
+7. Don't spend time editing video, just submit your first decent take
+
+![](images/recap.png){fig-align="right" width=2in}
+
+## Should I email MAA authors?
+
+- You are free to do so
+
+          - Most papers include author contact info
+          - Most authors care about making their work accessible
+          - Most authors are seldom contacted about their papers
+
+- Will author reply?
+
+          - It probably depends on the message length and preparedness
+          - Most authors will respond if question is well motivated and informed
+          - Some authors will never respond
+          - Some authors will respond exactly once, implying that you won't get a chance to follow up
+          - You can add author on LinkedIn to predict if they will respond
+ 
+
+## FAQ & Resources {.smaller}
+
+- Why a video?
+      
+          - Constrains length, reduces nerves, enables asynchronous viewing
+
+- Project parameters: See [syllabus](https://docs.google.com/document/d/1lqZCZRSac796cR4mhOeQra1ARa-ChVBJPyIL_xP_u4c/edit){target="_blank"}
+
+          - 3 people/team, 15 minute video, 5 minute Q&A
+
+- Deadline?
+
+          - 30 minutes before next class meeting starts
+
+- How to submit? [Upload here](https://drive.google.com/drive/folders/1UdVZYVEhG9oph2ZmgdkS5ARPR3eEfNLj?usp=sharing){target="_blank"}
+
+- What if I don't understand key elements of the paper?
+
+          - GPT4, classmates, Piazza, me/TA, or make do with partial understanding
+          
+- Does my video have to be perfect?
+
+          - No way, that's unrealistic, every video will have limitations
+
+![](images/takingoff.png){fig-align="right" width=2in}
