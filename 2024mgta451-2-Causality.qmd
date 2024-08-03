@@ -1,5 +1,5 @@
 ---
-title: "Causality "
+title: "Causality & Advertising"
 subtitle: "UCSD MGTA 451-Marketing"
 author: "Kenneth C. Wilbur"
 output: html_document
@@ -327,6 +327,13 @@ Also, estimating causal effects of ads can be pretty difficult
         - Platform estimates are typically "black box" without external auditing
         - Sometimes platforms respond to marketing executive demand for good numbers
         - "Nobody ever got fired for buying [famous platform brand here]"
+
+- Historically, most advertising work was done by agency professionals
+
+        - Agency compensation usually relies on spending, not incremental sales
+        - Principal/agent problems are common
+        - "Advertising attribution" was all about maximizing credit to ads
+        - These days, most marketers have in-house agencies, and split work
 
 
 ## 
