@@ -14,12 +14,15 @@ editor_options:
 
 ##  
 
-![](images/margarine.svg){fig-align="center" style="height: 100vh"}
+![](images/margarine.svg){fig-align="center" width=9in}
 
 
 ## 
 
-- Suppose 10 outcome variables (visits, sales, reviews, ...), 1000 potential predictors (customer attributes, ...), N=100,000 observations
+- Suppose 10 outcomes, 1000 predictors, N=100,000 obs
+
+          - Outcomes might include visits, sales, reviews, ...
+          - Predictors might include customer attributes, session attributes, ...
 
 - Suppose everything is noise, no true relationships
 
@@ -29,15 +32,17 @@ editor_options:
 
 - We should expect 500 false positives 
 
+          - What is a 'false positive' exactly?
+
 - In general, what can we learn from a significant correlation?
 
 ::: aside
-- [This R Script](https://drive.google.com/file/d/1NuHbXi8QNVkaJQ7QXBWiHqHfvtUaXlCC/view?usp=sharing){target="_blank"} simulates this scenario
+* [This R Script](https://drive.google.com/file/d/1NuHbXi8QNVkaJQ7QXBWiHqHfvtUaXlCC/view?usp=sharing){target="_blank"} simulates this scenario
 :::
 
 ## 
 
-![](images/BingRevenueTooHighTreatment.png){fig-align="center" style="height: 7in"}
+![](images/BingRevenueTooHighTreatment.png){fig-align="center" height=7in}
 
 ::: aside
 [source](https://www.amazon.com/Power-Experiments-Decision-Making-Understanding/dp/0544113966){target="_blank"}
@@ -55,12 +60,12 @@ We can explain it ex post (HARKing) but nobody expected such a big effect
  
 ## 
 
-![](images/CvC.png){fig-align="center" style="height:90vh"}
+![](images/CvC.png){fig-align="center" width=9in}
  
 ::: notes
 Key point here: The Correlation guy is not just silly or harmless. 
 He's weighing down the truck.
-There is an opportunity cost to having him in the truck, which is that he could 
+& there is an opportunity cost to having him in the truck, which is that he could 
 be pushing the truck instead.
 :::
  
@@ -78,7 +83,7 @@ be pushing the truck instead.
 
 ## 
 
-![](images/4typesofanalytics.png){fig-align="center" style="height: 90vh"}
+![](images/4typesofanalytics.png){fig-align="center" width=9in}
 
 ::: aside
 -   Causality matters for diagnostic and prescriptive analytics, not descriptive or predictive
@@ -88,26 +93,25 @@ be pushing the truck instead.
 
 -   Suppose we have a binary "treatment" or "policy" variable $T_i$ that we can "assign" to person $i$
 
-    ```         
-        - Examples: Advertise, Serve a design, Recommend, Give coupon
-    ```
+        - Examples: Advertise, Serve a design, Recommend
+        - "Treatment" terminology came from medical literature
 
 -   Suppose person $i$ could have a binary potential "response" variable $Y_i(T_i)$
 
-    ```         
-        - Examples: Visit site, Add to Cart, Click product, Redeem
-    ```
+        - Examples: Visit site, Click product, Add to Cart, Purchase, Rate, Review
+        - Looks like the marketing funnel model we saw previously
 
 - Important: $Y_i$ may depend fully, partially, or not at all on $T_i$, and the dependence may be different for different people
 
 
+
 ## Why care?
 
--   We want to maximize profits $\pi_i(Y_i(T_i), T_i)$ 
+- We want to maximize profits $\pi_i(Y_i(T_i), T_i)$ 
 
-- Suppose $Y_i=1$ contributes to revenue; then $\frac{\partial \pi_i}{\partial Y_i} >0$ 
+- Suppose $Y_i=1$ contributes to revenue; then $\frac{d\pi_i}{dY_i} >0$ 
 
-- Suppose $T_i=1$ is costly; then $\frac{\partial \pi_i}{\partial T_i}=\frac{\partial \pi_i}{\partial Y_i}\frac{\partial Y_i}{\partial T_i}+\frac{\partial \pi_i}{\partial T_i}$
+- Suppose $T_i=1$ is costly; then $\frac{d\pi_i}{dT_i}=\frac{\partial \pi_i}{\partial Y_i}\frac{\partial Y_i}{\partial T_i}+\frac{\partial \pi_i}{\partial T_i}$
 
 - We have to know $\frac{\partial Y_i}{\partial T_i}$ to optimize $T_i$ assignments
 
@@ -153,13 +157,13 @@ be pushing the truck instead.
 
 - How does empirical approach fit with organizational analytics culture? Can we act on what we learn? 
 
-- Individual considerations: promotion, bonus, reputation, career; Will ex-post attributions verify findings? 
+- Individual considerations: promotion, bonus, reputation, career; Will credit be stolen or blame be shared? 
 
-- Accountability: Will credit be stolen? Will blame be shared? Will results threaten or complement rival teams/execs?
+- Accountability: Will ex-post attributions verify findings? Will results threaten or complement rival teams/execs?
 
 
         
-## Ad/sales example: Experiment {.scrollable}
+## Ad/sales example: Experiment {.scrollable .smaller}
 
 1. Randomly assign ads to customer groups on a platform; measure sales in each group, e.g. [Link](https://www.facebook.com/business/learn/lessons/how-to-make-your-ads-more-effective){target="_blank"}
 
@@ -177,12 +181,13 @@ be pushing the truck instead.
 
 5. Randomly choose platforms, publishers, behavioral targets, etc., to compare RoAS across options
 
+          RoAS = Return on Ad Spend. Usually, RoAS = Sales / AdSpend. Sometimes, =(Sales-AdSpend)/AdSpend
 
 ## 2. Ad/sales example: Experiment {.scrollable}
 
 Key issues for any experimental design: 
         
-        - ALWAYS run A:A test first. Validate the infrastructure before trusting a result
+        - Always run A:A test first. Validate the infrastructure before trusting a result
         
         - Can we agree on the opportunity cost of the experiment? "Priors"
         
@@ -193,37 +198,36 @@ Key issues for any experimental design:
 
 ## Before quasi-experiments: Vocab {.smaller }
 
-**Model**: Mathematical relationship between variables that simplifies reality
+**Model**: Mathematical relationship between variables that simplifies reality, eg y=xb+e
 
 **Identification strategy**: Set of assumptions that isolate a causal effect $\frac{\partial Y_i}{\partial T_i}$ from other factors that may influence $Y_i$
 
+          - A system to compare apples with apples, not apples with oranges
+
 We say we "identify" the causal effect if we have an identification strategy that reliably distinguishes $\frac{\partial Y_i}{\partial T_i}$ from possibly correlated unobserved factors that also influence $Y_i$
 
-You can estimate a model with an identification strategy, but the results should be interpreted as correlational
-
-          - but this part is hard to verify
+If you estimate a model without an identification strategy, you should interpret the results as correlational
 
 You can have an identification strategy without a model, e.g. <br>avg  $Y_i(T_i=1)-Y_i(T_i=0)$
 
-Usually you want both. Models help with quantifying uncertainty and estimating treatment effects by controlling for relevant observables. We'll focus on identification strategies today
+Usually you want both. Models help with quantifying uncertainty and estimating treatment effects by controlling for relevant observables
 
 
 ## 2. Ad/sales: Quasi-experiments
 
-Goal: Find a "natural experiment" in which $T_i$ is "as if" randomly assigned
+Goal: Find a "natural experiment" in which $T_i$ is "as if" randomly assigned, to identify $\frac{\partial T_i}{\partial Y_i}$
 
 Possibilities:
 
-          - Firm starts, stops or pulses advertising without changing other variables
+          - Firm starts, stops or pulses advertising without changing other variables, especially when staggered across times or geos
           - Competitor starts, stops or pulses advertising
-          - Change in ad prices, availability or targeting for exogenous reasons that don't affect Y (e.g., election)
-          - Relevant PR or news events, other sharp changes in addressable market size like product entries, distribution partner changes, etc.
+          - Change in ad prices, availability or targeting for exogenous reasons that don't affect Y (e.g., election or outage)
+          - Discontinuous ad copy/campaign changes without changing other variables 
 
-We are most likely to find a natural experiment if we seek actively 
 
-## 
+## DraftKings and FanDuel TV ad effects on Google Search
 
-![](images/dfs_search_2015.png){fig-align="center" width=10in}          
+![](images/dfs_search_2015.png){fig-align="center" width=9in}          
 
 ::: aside
 [source](https://drive.google.com/file/d/175yrLDY-W15TgBtumPa11WnwMwCeUmSF/view){target="_blank"}
@@ -244,10 +248,6 @@ In each case, we try to predict our missing counterfactual data, then estimate t
 
 ## 3. Ad/sales example: Correlational
 
-This is what most firms did historically, but fewer each year
-
-          Some update practices, but more exit
-
 Just get historical data on $Y_i$ and $T_i$ and run a regression
 
            Most people use OLS, but Google's CausalImpact R package is also popular
@@ -261,9 +261,9 @@ The implicit assumption is either that there are no unobservables that influence
 
 Advertisers try hard to maximize ad effects
 
-They select messages, media, times, target audiences, places (etc.) to get the biggest impact possible
+We select messages, media, times, contexts, target audiences, publishers (etc.) to maximize potential impact 
 
-Sometimes, they use ML algos that mechanistically corr(ad,sales)
+Sometimes, we use ML algos that max corr(ad,sales)
 
 So, if you assume that past $T_i$ was random, it's functionally equivalent to assuming that the advertising team is incompetent
 
@@ -278,84 +278,87 @@ Suppose you wisely advertise only in places where you expect a big response
 
 You'll get a big correlation between ads and sales, partly because of differences in addressable market sizes
 
-So then you'll overestimate the effect of ads on sales
+            More ads in san diego, more surfboard sales in san diego
 
-        - Same thing can occur based on time or people in place of geo
+            Corr(ad,sales) would overestimate the causal effect of ads on sales, and likely lead you to spend too much on ads in san diego
 
-Yet many, many firms basically do this
+Many, many firms basically do this
 
 
-## Why are teams OK with corr(ad,sales)?
+## Why are some teams OK with corr(ad,sales)?
 
-- Some firms say if ads go to zero -> sales go to zero
+1. Some worry that if ads go to zero -> sales go to zero
 
+        - For small firms or new products, this may be good logic
         - If this is true, then the correlation is the causal effect
-        - So this directly suggests an experimental design which may be financially cheap to run
-        - This claim directly implies a huge customer satisfaction problem. Happy customers usually share their experiences with others. If you really believe this is true, try a referral program
+        - Directly suggests an inexpensive experimental design
+        - Claim directly implies a huge customer satisfaction problem. Happy customers usually share their experiences with others. If you really believe this is true, try a referral program
 
-- Some firms assume that correlational results point in the right direction of causal results
+2. Some firms assume that correlations indicate direction of causal results
 
         - The guy in the truck bed is not pushing backwards right?
         - But what is this assumption based on?
+        - Direction is only part of the picture; what about effect size?
         - Unfortunately, if it's hard to get a causal estimate, then this assumption is probably ill founded
 
 
-## Why are teams OK with corr(ad,sales)?
+## Why are some teams OK with corr(ad,sales)?
 
-Most commonly: CFO and CMO negotiate over the ad budget
+3. CFO and CMO negotiate ad budget
 
         - CFO asks for proof that ads work
-        - CMO asks agencies, platforms & marketing team for proof
+        - CMO asks ad agencies, platforms & marketing team for proof
         - CMO sends proof to CFO ; We all carry on
         - Things may change if ad effects team reports to CFO
 
-Few rigorous analytics cultures, backward-looking checks, career considerations
+4. Few rigorous analytics cultures or ex-post checks
 
+        - Downside of lost sales may exceed downside of foregone profits
 
-Also, estimating causal effects of ads can be pretty difficult
+5.Estimating causal effects of ads can be pretty difficult
 
         - Many firms lack expertise, patience, execution skill
-        - Ad/sales tests are often statistically inconclusive
+        - Ad/sales tests may be statistically inconclusive, especially if small
         - Tests are often designed without subsequent actions in mind
 
-## Why are teams OK with corr(ad,sales)?
+## Why are some teams OK with corr(ad,sales)?
 
-- Platforms often provide correlational ad/sales estimates
+6. Platforms often provide correlational ad/sales estimates
 
         - Which one do you think is larger, correlational or experimental ad effect estimates?
         - Which one would most client marketers prefer?
-        - Platform estimates are typically "black box" without external auditing
+        - Platform estimates are typically "black box" without neutral auditors
         - Sometimes platforms respond to marketing executive demand for good numbers
         - "Nobody ever got fired for buying [famous platform brand here]"
 
-- Historically, most advertising work was done by agency professionals
+7. Historically, most advertising work was done by agency professionals
 
         - Agency compensation usually relies on spending, not incremental sales
         - Principal/agent problems are common
-        - "Advertising attribution" was all about maximizing credit to ads
+        - "Advertising attribution" is all about maximizing credit to ads
         - These days, most marketers have in-house agencies, and split work
 
 
 ## 
 
-![](images/incrementality.png){fig-align="center" style="height: 100vh"}
+![](images/incrementality.png){fig-align="center" width=9in}
 
 ## 
 
-![](images/gtrends_adexp.png){fig-align="center" width=10in}
+![](images/gtrends_adexp.png){fig-align="center" width=9in}
 
 
           - I believe we're at the start of a generational shift
 
 ##
 
-![](images/adsalesratios2024.png){fig-align="center" width=6.5in}
+![](images/adsalesratios2024.png){fig-align="center" width=5in}
 
-          - Compare to typical net earnings ratios
-          - Recall that advertising spending finances most information production
+- Typical net margin: 8-10% ([see Damodaran](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/margin.html){target="_blank"})
+- Ads finance information production
 
 ::: aside
-[source](https://saibooks.com/advertising-sales-ratios/){target="_blank"}
+[SAI Books source](https://saibooks.com/advertising-sales-ratios/){target="_blank"}
 :::
 ::: notes
 [also relevant](https://www.rab.com/research/10014.pdf){target="_blank"}
@@ -363,35 +366,101 @@ Also, estimating causal effects of ads can be pretty difficult
 
 ## 
 
-![](images/hawksem.png){fig-align="center" style="height: 90vh"}
+![](images/hawksem.png){fig-align="center" width=7in}
 
 ::: aside
 - Maybe the right question is what % of sales to spend on experiments to get more sales
 :::
 
 
-## Popular Ad/Sales Models
+## Marketing Mix Model {.smaller}
 
-- AB Tests
+- The "marketing mix" consists of quantifiable marketing efforts, such as product line, length and features; price and price promotions; advertising, PR, social media and other communication efforts; retail distribution intensity and quality; etc.
+
+- A "marketing mix model" quantifies the relationship between marketing mix variables and outcomes
+
+          - Idea goes back to the 1950s
+          - E.g., suppose we increase price & ads at the same time
+          - Or, suppose ads increased demand, and then inventory-based systems raised prices
+
+- A "media mix model" quantifies numerous advertising efforts and relates them to sales
+
+          - For example, suppose the brand bought ads from 000s of publishers
+          - Confusingly, both abbreviated MMM and often feature similar structures
+
+- MMM goal is to quantify past marketing mix effects, to better inform future efforts
+
+
+## MMM elements {.smaller}
+
+Typically, MMM uses geo/time data
+
+          - Outcome: usually sales. Could include more funnel metrics (visits, leads, ...)
+          - Predictors: Marketing mix factors under our control, plus competitor variables, seasonality, macroeconomic factors, + any other demand shifters
+
+Model structure is usually some type of panel regression, vector autoregression, or bayesian model
+
+          - Often includes lags, interactions, and other nonlinear terms
+          - Regressions typically estimate marginal effects, not average effects
+          - Nonlinearities built into the model, such as Inc or Dec returns to ad spend, can drive key results
+
+MMM often used to retrospectively evaluate advertising media and copy, advertising interactions, and inform future ad budgets
+
+          - MMM can be used for prediction but should be calibrated appropriately
+
+
+## MMM Challenges
+
+- Without experimental data, MMM results are correlational
+
+- Data availability, accuracy and granularity are all critical
+
+- MMM requires sufficient variation in predictors, else it cannot estimate coefficients
+
+- "Model uncertainty" :  Results can be strongly sensitive to modeling choices
+
+- For much more, see this [MSI White Paper](https://github.com/kennethcwilbur/website/raw/master/MSI-MMM-Blue-Ribbon-Panel-Report-Updated.pdf){target="_blank"} or the [MMM Wikipedia article](https://en.wikipedia.org/wiki/Marketing_mix_modeling){target="_blank"}
+          
+          
+## Other Popular Ad/Sales Approaches
+
+          Remember, model <> identification strategy
 
 - Lift Tests
 
-- Marketing Mix Models
+- Multi-touch attribution (MTA)
 
-- Multi-touch attribution models
+          - Seeks to allocate "credit" for sales across advertising touchpoints
+          - Related: First-touch attribution, last-touch attribution
 
-- Recall that model != identification strategy 
+- Cookie-based approaches vs. Google's Privacy Sandbox 
 
-        - Fundamental problem of causal inference is a missing-data problem, not a model problem
-        - Models can assume away causality problems, but then we should interpret them as correlations, so it's not really clear that we could act on findings
+- Ghost ads 
+
+- Other platform-provided experimentation tools
+
+## 
+
+![](images/li1.png){fig-align="center" width=6in}
+
+## 
+
+![](images/li2.png){fig-align="center" width=11in}
+
+::: notes
+It's interesting that comments mainly came from those with little to lose
+:::
+
 
 ## Takeaways
 
-- Fundamental Problem of Causal Inference: We can't observe all relevant data to optimize actions. This is a missing-data problem
+- Fundamental Problem of Causal Inference: We can't observe all data needed to optimize actions. This is a missing-data problem
 
-- Remedies: Experiments, Quasi-experiments, Correlations
+- Approaches: Experiments, Quasi-experiments, Correlations, Ignore
 
 - Experiments are the gold standard, but are costly and difficult to design, implement and act on
+
+- It's likely that most large firms spend too much on ads
 
 ![](images/recap.png){fig-align="right" width="2in"}
 
@@ -405,6 +474,9 @@ Also, estimating causal effects of ads can be pretty difficult
 
 -  [The Power of Experiments](https://direct.mit.edu/books/book/5468/The-Power-of-ExperimentsDecision-Making-in-a-Data){target="_blank"}: Goes deep on digital test-and-learn considerations
 
-- [Mostly Harmless Econometrics](https://www.amazon.com/Mostly-Harmless-Econometrics-Empiricists-Companion/dp/0691120358){target="_blank"}: Guide to Quasi-experimental techniques
+- [New Developments in Experimental Design and Analysis
+ (2024)](https://www.youtube.com/watch?v=CMO2NsxQXt4) by Athey & Imbens
+
+- [Mostly Harmless Econometrics](https://www.amazon.com/Mostly-Harmless-Econometrics-Empiricists-Companion/dp/0691120358){target="_blank"}: Covers quasi-experimental techniques
 
 ![](images/takingoff.png){fig-align="right" width="2in"}
