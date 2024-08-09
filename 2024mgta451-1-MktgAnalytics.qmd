@@ -22,16 +22,16 @@ editor_options:
 
 ## 
 
-![](images/lettuce.png){fig-align="center" style="height: 100vh"}
+![](images/lettuce.png){fig-align="center" width=9in}
 
 
 ## 
 
-![](images/gpt4misconceptions.png){fig-align="center" style="height: 100vh"}
+![](images/gpt4misconceptions.png){fig-align="center" width=10in}
 
 ## 
 
-![](images/Picture10.png){fig-align="center" style="height: 100vh"}
+![](images/Picture10.png){fig-align="center" width=10in}
 
 
 ## 
@@ -46,21 +46,39 @@ editor_options:
 
 ##
 
-![](images/hbr-whystartupsfail.png){fig-align="center" style="height: 100vh"}
+![](images/hbr-whystartupsfail.png){fig-align="center" width=10in}
 
 ## 
 
-![](images/whatdomarketersdo.png){fig-align="center" style="width: 100vw"}
+![](images/whatdomarketersdo.png){fig-align="center" width=10in}
 
 
 ## 
 
 Why? Long-term profits
 
-![](images/callsanta.png){fig-align="center" style="height: 70vh"}
+![](images/callsanta.png){fig-align="center" width=10in}
 
 ::: aside
 Scams can be unprofitable if you account for legal costs
+:::
+
+## 
+
+![](images/google-meta.png){fig-align="center" width=9in}
+
+::: aside
+[source](https://archive.ph/AVRL9){target="_blank"}
+:::
+
+::: notes
+- It's probably OK that youtube (an advertising service) sold ads to meta (a client)
+- But is it OK to target users on the basis of missing targeting data like age?
+- And is it OK to say your safeguards worked under these conditions?
+- And why cancel the project if the safeguards worked?
+- And why aren't you enforcing your own standards prior to this incident?
+- And why is the right repsonse more training for sales staff, rather than actually enforcing your standards?
+- So many questions...
 :::
 
 ## 
@@ -71,15 +89,15 @@ Scams can be unprofitable if you account for legal costs
 
 ##
 
-![](images/cmos-responsible.png){fig-align="center" style="height: 100vh"}
+![](images/cmos-responsible.png){fig-align="center" width=9in}
 
 ## 
 
-![](images/mktg_ngram.png){fig-align="center" style="width: 100wh"}
+![](images/mktg_ngram.png){fig-align="center" width=10in}
 
 ##
 
-![](images/gtrends.png){fig-align="center" style="width: 100wh"}
+![](images/gtrends.png){fig-align="center" width=10in}
 
 
 ## Traditional Marketing Frameworks: Mainly Vibes
@@ -121,7 +139,7 @@ Scams can be unprofitable if you account for legal costs
 
 ## 
 
-![](images/netflix-personalizing.png){fig-align="center" style="height: 100vh"} 
+![](images/netflix-personalizing.png){fig-align="center" width=10in} 
 
 
 ## Customer Insights
@@ -173,7 +191,7 @@ Advertising & sales can help to achieve a marketing strategy
 
           - Without a strategy, we're shooting in the dark, likely wasting money
 
-A "marketing strategy" is an understanding of heterogeneous customer needs, perceptions and behaviors; and a sustainable value proposition vs. competitors
+A "marketing strategy" is an understanding of the market's heterogeneous customer needs, perceptions and behaviors; and a sustainable value proposition vs. competitors
 
 ## Takeaways
 
