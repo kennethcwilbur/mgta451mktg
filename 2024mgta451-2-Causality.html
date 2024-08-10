@@ -338,7 +338,57 @@ Kenneth C. Wilbur
 </div>
 
 </section>
+<section>
+<section id="advertising" class="title-slide slide level1 center">
+<h1>Advertising</h1>
+
+</section>
 <section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ads_ds_time_spending.png" class="quarto-figure quarto-figure-center" style="width:9in"></p>
+</figure>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ads_ds_avoid.png" class="quarto-figure quarto-figure-center" style="width:11in"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><a href="https://drive.google.com/file/d/126xyjFPuZAQW3EcHIa_LPKN_yc5QU3zB/view?usp=sharing">source.</a> Publishers sell “Opportunites to See”, not “Exposures” ; see <a href="https://en.wikipedia.org/wiki/Media_Rating_Council#Viewability_standard">Viewability</a></p>
+</div></aside></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ads_ds_buy.png" class="quarto-figure quarto-figure-center" style="height:7in"></p>
+</figure>
+</div>
+</section>
+<section id="toy-economics-of-advertising" class="slide level2">
+<h2>Toy economics of advertising</h2>
+<ul>
+<li><p>Suppose we pay $20 to buy 1,000 digital ad OTS. Suppose 3 people click, 1 person buys.</p></li>
+<li><p>Ad profit &gt; 0 if transaction margin &gt; $20</p>
+<pre><code>    - But we also had to advertise to 999 people who didn't buy</code></pre></li>
+<li><p>Or, ad profit &gt; 0 if customer CLV &gt; $20 <em>and</em> if the customer would not have purchased otherwise</p>
+<pre><code>    - This is "incrementality"
+    - But how would we know if they would have purchased otherwise?</code></pre></li>
+<li><p>Ad effects are often subtle, but ad profit can still be robust</p>
+<pre><code>    - Ad profit depends on ad cost, conversions, margin, objective formulation</code></pre></li>
+</ul>
+</section></section>
+<section>
+<section id="causality" class="title-slide slide level1 center">
+<h1>Causality</h1>
+
+</section>
+<section id="section-3" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -346,7 +396,7 @@ Kenneth C. Wilbur
 </figure>
 </div>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <ul>
 <li><p>Suppose 10 outcomes, 1000 predictors, N=100,000 obs</p>
@@ -366,7 +416,7 @@ Kenneth C. Wilbur
 <li><a href="https://drive.google.com/file/d/1NuHbXi8QNVkaJQ7QXBWiHqHfvtUaXlCC/view?usp=sharing" target="_blank">This R Script</a> simulates this scenario</li>
 </ul>
 </div></aside></section>
-<section id="section-2" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -390,7 +440,7 @@ Kenneth C. Wilbur
 <aside><div>
 <p><a href="https://www.amazon.com/Power-Experiments-Decision-Making-Understanding/dp/0544113966" target="_blank">source</a></p>
 </div></aside></section>
-<section id="section-3" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -413,7 +463,7 @@ Kenneth C. Wilbur
 
 <aside><div>
 <p><a href="https://s3.amazonaws.com/fieldexperiments-papers2/papers/00779.pdf">source</a></p>
-</div></aside></section>
+</div></aside></section></section>
 <section>
 <section id="agenda" class="title-slide slide level1 center">
 <h1>Agenda</h1>
@@ -425,7 +475,7 @@ Kenneth C. Wilbur
 <li>Ad/sales frameworks</li>
 </ul>
 </section>
-<section id="section-4" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -490,9 +540,10 @@ Kenneth C. Wilbur
 <ul>
 <li><p>Organizational returns or costs of getting it right?</p></li>
 <li><p>Data thickness: How likely can we get a good estimate?</p></li>
-<li><p>How does empirical approach fit with organizational analytics culture? Can we act on what we learn?</p></li>
-<li><p>Individual considerations: promotion, bonus, reputation, career; Will credit be stolen or blame be shared?</p></li>
-<li><p>Accountability: Will ex-post attributions verify findings? Will results threaten or complement rival teams/execs?</p></li>
+<li><p>How does empirical approach fit with organizational analytics culture? Will we act on what we learn?</p></li>
+<li><p>Individual: promotion, bonus, reputation, career; Will credit be stolen or blame be shared?</p></li>
+<li><p>Accountability: Will ex-post attributions verify findings? Will results threaten or complement rival teams/execs?</p>
+<pre><code>    - Analytics culture starts at the top</code></pre></li>
 </ul>
 </section>
 <section id="adsales-example-experiment" class="slide level2 scrollable smaller">
@@ -572,8 +623,22 @@ Kenneth C. Wilbur
       But are we the guy in the truck bed?
       </code></pre>
 </section>
+<section id="strongest-case-for-corradsales" class="slide level2">
+<h2>Strongest case for corr(ad,sales)</h2>
+<p>Corr(ad,sales) contains some truth</p>
+<pre><code>      - If ads cause sales, then corr(ad,sales)&gt;0</code></pre>
+<p>Some products/channels just don’t sell without ads</p>
+<pre><code>      - E.g., Direct response TV ads for 1800 #s
+      - Career professionals tell me those #s get 0 calls until a TV ad
+      - Then they get 1-5 calls per 1k viewers, lasting up to ~30 minutes
+      - Then calls drop back to 0 ; so here we actually know the counterfactual
+      - We can calculate exact profits if we know call profit and ad cost
+      - What are some digital analogues to this?</code></pre>
+<p>However, this argument gets pushed too far</p>
+<pre><code>      - For example, when search advertisers disregard organic link clicks when calculating search ad click profits</code></pre>
+</section>
 <section id="problem-1-with-corradsales" class="slide level2">
-<h2>3. Problem 1 with corr(ad,sales)</h2>
+<h2>Problem 1 with corr(ad,sales)</h2>
 <p>Advertisers try hard to maximize ad effects</p>
 <p>We select messages, media, times, contexts, target audiences, publishers (etc.) to maximize potential impact</p>
 <p>Sometimes, we use ML algos that max corr(ad,sales)</p>
@@ -581,7 +646,7 @@ Kenneth C. Wilbur
 <pre><code>      - This type of selection/treatment problem is common in marketing</code></pre>
 </section>
 <section id="problem-2-with-corradsales" class="slide level2">
-<h2>3. Problem 2 with corr(ad,sales)</h2>
+<h2>Problem 2 with corr(ad,sales)</h2>
 <p>Suppose you wisely advertise only in places where you expect a big response</p>
 <pre><code>        E.g. you advertise surfboards in coastal cities with big waves, but not in landlocked cities</code></pre>
 <p>You’ll get a big correlation between ads and sales, partly because of differences in addressable market sizes</p>
@@ -590,14 +655,71 @@ Kenneth C. Wilbur
         Corr(ad,sales) would overestimate the causal effect of ads on sales, and likely lead you to spend too much on ads in san diego</code></pre>
 <p>Many, many firms basically do this</p>
 </section>
+<section id="problem-3-with-corradsales" class="slide level2">
+<h2>Problem 3 with corr(ad,sales)</h2>
+<ul>
+<li><p>Leaves marketers powerless vs <del>big</del> colossal ad platforms</p></li>
+<li><p>Google and Meta obfuscate ad placement algorithms</p>
+<pre><code>    - How many ad placements are incremental?
+    - How many ad placements target likely converters?
+    - How can advertisers react to adversarial ad price adjustments?
+    - How can advertisers evaluate brand safety, targeting, other contextual elements?</code></pre></li>
+<li><p>Have ad platforms ever left ad budget unspent?</p>
+<pre><code>    - Would you, if you were them?
+    - If not, why not? What does that imply about incrementality?</code></pre></li>
+<li><p>To balance ad platform power, know your ad profits, vote with your feet</p></li>
+</ul>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/closeenough.png" class="quarto-figure quarto-figure-center" style="width:9in"></p>
+</figure>
+</div>
+
+<aside><div>
+<p><a href="https://arxiv.org/abs/2201.07055" target="_blank">source</a></p>
+</div></aside></section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/gmz_fig3.png" class="quarto-figure quarto-figure-center" style="width:10in"></p>
+</figure>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/gmz_fig4.png" class="quarto-figure quarto-figure-center" style="width:7in"></p>
+</figure>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/gmz_fig10a.png" class="quarto-figure quarto-figure-center" style="width:10in"></p>
+</figure>
+</div>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/gmz_fig11.png" class="quarto-figure quarto-figure-center" style="width:6in"></p>
+</figure>
+</div>
+</section>
 <section id="why-are-some-teams-ok-with-corradsales" class="slide level2">
 <h2>Why are some teams OK with corr(ad,sales)?</h2>
 <ol type="1">
 <li><p>Some worry that if ads go to zero -&gt; sales go to zero</p>
 <pre><code> - For small firms or new products, this may be good logic
- - If this is true, then the correlation is the causal effect
- - Directly suggests an inexpensive experimental design
- - Claim directly implies a huge customer satisfaction problem. Happy customers usually share their experiences with others. If you really believe this is true, try a referral program</code></pre></li>
+ - However, claim may imply a customer satisfaction problem. Happy customers usually share their experiences with others. If you really believe this, try a referral program
+ - Plus, we can run experiments without setting ads to zero, e.g. weight tests</code></pre></li>
 <li><p>Some firms assume that correlations indicate direction of causal results</p>
 <pre><code> - The guy in the truck bed is not pushing backwards right?
  - But what is this assumption based on?
@@ -637,7 +759,7 @@ Kenneth C. Wilbur
  - These days, most marketers have in-house agencies, and split work</code></pre></li>
 </ol>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -645,16 +767,18 @@ Kenneth C. Wilbur
 </figure>
 </div>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-14" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/gtrends_adexp.png" class="quarto-figure quarto-figure-center" style="width:9in"></p>
 </figure>
 </div>
-<pre><code>      - I believe we're at the start of a generational shift</code></pre>
+<pre><code>      - I believe we're a few years into a generational shift
+      - However, corr(ad,sales) is not going away
+      - More like podcasts v AM radio than like streaming v CDs</code></pre>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-15" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -682,7 +806,7 @@ Kenneth C. Wilbur
 <aside><div>
 <p><a href="https://saibooks.com/advertising-sales-ratios/" target="_blank">SAI Books source</a></p>
 </div></aside></section>
-<section id="section-8" class="slide level2">
+<section id="section-16" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -692,7 +816,7 @@ Kenneth C. Wilbur
 
 <aside><div>
 <ul>
-<li>Maybe the right question is what % of sales to spend on experiments to get more sales</li>
+<li>Right question: what % of sales to spend on experiments to learn to get more sales, then use incremental returns &amp; risk to inform the budget</li>
 </ul>
 </div></aside></section>
 <section id="marketing-mix-model" class="slide level2 smaller">
@@ -744,7 +868,7 @@ Kenneth C. Wilbur
 <li><p>Other platform-provided experimentation tools</p></li>
 </ul>
 </section>
-<section id="section-9" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -752,7 +876,7 @@ Kenneth C. Wilbur
 </figure>
 </div>
 </section>
-<section id="section-10" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -773,13 +897,30 @@ Kenneth C. Wilbur
           display:block!important;
       }</style></aside>
 </section>
+<section id="kens-take" class="slide level2">
+<h2>Ken’s take</h2>
+<ul>
+<li><p>Converting correlational efforts to incremental is a resume headline and interesting challenge</p>
+<pre><code>    - Suggests a narrow view of experiments or how to act on them
+    - Understanding that view is a first step toward addressing it
+    - Also might suggest an ad agency background</code></pre></li>
+<li><p>Correlational + Incremental &gt; Either alone</p>
+<pre><code>    - What version of incrementality might they value?</code></pre></li>
+<li><p>Going-dark design</p>
+<pre><code>    - Turn off ads in (truly) random 10% of places/times; nominally free
+    - Compare measured sales to ex-ante modeled predictions
+    - Can that comparison improve our model &amp; motivate more experiments?</code></pre></li>
+<li><p>If structural incentives misalign, consider a new role</p>
+<pre><code>    - Life is too short, do something meaningful          </code></pre></li>
+</ul>
+</section>
 <section id="takeaways" class="slide level2">
 <h2>Takeaways</h2>
 <ul>
 <li><p>Fundamental Problem of Causal Inference: We can’t observe all data needed to optimize actions. This is a missing-data problem</p></li>
 <li><p>Approaches: Experiments, Quasi-experiments, Correlations, Ignore</p></li>
 <li><p>Experiments are the gold standard, but are costly and difficult to design, implement and act on</p></li>
-<li><p>It’s likely that most large firms spend too much on ads</p></li>
+<li><p>Ad effects are subtle but that does not necessarily imply unprofitability</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-right">
 <figure>
