@@ -1,28 +1,26 @@
 ---
-title: "Intro to Marketing "
+title: "Intro to Marketing"
 subtitle: "UCSD MGTA 451-Marketing"
 author: "Kenneth C. Wilbur"
 output: html_document
 format: 
   revealjs:
-    auto-stretch: false 
+    auto-stretch: true 
     theme: default
 slide-number: c 
 editor_options: 
   chunk_output_type: inline 
 ---
 
-# 2-day Agenda
+# Agenda
 
-- Marketing
-- Causality & Advertising
-- Marketing Analytics Article Video Assignment
-- Marketing Analytics Article Videos & Discussion
-- (if time) Online Gambling Research
+Day 1: Intro to Marketing, MAA Assignment, <br>Causality & Advertising
+
+Day 2: MAA Videos, Quiz
 
 ## 
 
-![](images/lettuce.png){fig-align="center" width=9in}
+![](images/lettuce.png){fig-align="center" width=10in}
 
 
 ## 
@@ -137,10 +135,14 @@ Scams can be unprofitable if you account for legal costs
 
           - Experience, needs, perceptions, wtp, purchases, recommendations, reviews
 
+
 ## 
 
 ![](images/netflix-personalizing.png){fig-align="center" width=10in} 
 
+::: aside
+[source](https://web.archive.org/web/20240000000000*/https://www.theverge.com/24182520/netflix-co-ceo-memo-ads-subscription-price-decoder-podcast-interview)
+:::
 
 ## Customer Insights
 
@@ -164,7 +166,7 @@ Scams can be unprofitable if you account for legal costs
 
 ## 
 
-“Our core business is connected with the customers’ needs and we will not be able to satisfy them if we won’t have a deep sense of empathy.”
+“Our core business is connected with the customers’ needs and we will not be able to satisfy them if we don’t have a deep sense of empathy.”
 
 ![](images/satya.jpg){fig-align="right" width=3in}
 
@@ -172,36 +174,42 @@ Scams can be unprofitable if you account for legal costs
 
 - Sales is widespread in B2B industries
 
-- Salespeople offer customer needs discovery, relationships & trust, product customization, risk mitigation & service, education, negotiation, even customer agency 
+- Salespeople offer 
 
-- Marketing dept usually generates leads, then constrains & supports sales
+          - customer needs discovery & product customization
+          - customer risk mitigation & service
+          - relationships & trust; can generate new leads
+          - education, negotiation, even customer agency 
+
+- Marketing dept usually generates leads, <br>then constrains & supports sales
 
 - How do marketing and sales usually interact?
 
-- What role do analytics play in sales?
+          - What role do analytics play in sales?
 
 
-## 
+## Bottom line
 
-No advertising or sales can fix a broken value proposition, misunderstanding of consumer needs, unsustainable competitive position, absence of customer trust
+Advertising & sales cannot fix a broken value proposition, misunderstanding of consumer needs, unsustainable competitive position, absence of customer trust
 
-          - That's why start with the customer first, then monitor and test our understanding as things evolve
+          - We have to start with the customer first, then monitor and test our understanding as things evolve
 
-Advertising & sales can help to achieve a marketing strategy
+Marketing strategy == sustainable value proposition vs. competitors based on the market's heterogeneous customer needs, perceptions and behaviors
+
+Advertising & sales can help to implement a good strategy
 
           - Without a strategy, we're shooting in the dark, likely wasting money
-
-A "marketing strategy" is an understanding of the market's heterogeneous customer needs, perceptions and behaviors; and a sustainable value proposition vs. competitors
+          - This is why marketing has to be more than just ads & sales
 
 ## Takeaways
 
 - Customers keep the lights on
 
-      - Customers only buy if they understand how the product will reliably meet their needs 
+      - Customers might buy if they trust the product will meet their needs 
 
-- Marketing is about understanding and profitably meeting customer needs to maximize long-run profits
+- Good marketing understands and profitably meets customer needs to maximize long-run profits
 
-      - Ads and sales require a compelling value proposition to be profitable
+      - Ads and sales require a compelling strategy to be profitable
 
 - Long-term focus aligns customer and company interests, sidesteps most ethical problems
 
@@ -217,7 +225,7 @@ A "marketing strategy" is an understanding of the market's heterogeneous custome
 
 - [Google](https://www.google.com/search?hl=en&q=google%20marketing%20training){target="_blank"}, [Meta](https://www.google.com/search?hl=en&q=meta%20marketing%20class){target="_blank"}, [Shopify](https://academy.shopify.com/?q=marketing#-c){target="_blank"} offer free courses
 
-          - Generally good content, but always remember these are motivated actors. The classes are free for a reason & some important topics will be excluded
+          - Generally good content, but these classes are part of the provider's marketing funnel. Some important topics will be excluded
 
 - Seth Godin is breezy, motivational and directionally right
 
