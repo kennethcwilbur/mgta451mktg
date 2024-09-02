@@ -5,7 +5,7 @@ author: "Kenneth C. Wilbur"
 output: html_document
 format: 
   revealjs:
-    auto-stretch: false
+    auto-stretch: true
     theme: default
 slide-number: c 
 editor_options: 
@@ -18,28 +18,59 @@ editor_options:
 
 ![](images/ads_ds_time_spending.png){fig-align="center" width=9in}
 
+::: aside
+Consumer attention is more scarce in some media than others
+:::
+
 ## 
 
 ![](images/ads_ds_avoid.png){fig-align="center" width=11in}
 
 ::: aside
-[source.](https://drive.google.com/file/d/126xyjFPuZAQW3EcHIa_LPKN_yc5QU3zB/view?usp=sharing)
-Publishers sell "Opportunites to See", not "Exposures" ; see [Viewability](https://en.wikipedia.org/wiki/Media_Rating_Council#Viewability_standard)
+[source.](https://drive.google.com/file/d/126xyjFPuZAQW3EcHIa_LPKN_yc5QU3zB/view?usp=sharing){target="_blank"}
+Publishers sell "Opportunites to See", not "Exposures" ; see [Viewability](https://en.wikipedia.org/wiki/Media_Rating_Council#Viewability_standard){target="_blank"}
 :::
 
 ## 
 
-![](images/ads_ds_buy.png){fig-align="center" height=7in}
+![](images/ads_ds_buy.png){fig-align="center" height=6.2in}
 
-## Toy economics of advertising
+::: aside
+- Survey data: How many people buy things based on ads?
+:::
+
+
+##
+
+![](images/adsalesratios2024.png){fig-align="center" width=4.5in}
+
+- Typical net margin: 8-10% (see [Damodaran](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/margin.html){target="_blank"})
+
+          - So modal firm could increase EBITDA 28-35% by dropping ads: (8+2.83)/8=1.35
+          - Or could it? What would happen to revenue?
+
+::: aside
+[SAI Books source](https://saibooks.com/advertising-sales-ratios/){target="_blank"}
+:::
+::: notes
+[also relevant](https://www.rab.com/research/10014.pdf){target="_blank"}
+:::
+
+
+
+## Toy economics of advertising {.smaller}
 
 - Suppose we pay $20 to buy 1,000 digital ad OTS. Suppose 3 people click, 1 person buys.
 
 - Ad profit > 0 if transaction margin > $20
 
-          - But we also had to advertise to 999 people who didn't buy
+          - But we bought ads for 999 people who didn't buy
 
-- Or, ad profit > 0 if customer CLV > $20 *and* if the customer would not have purchased otherwise
+- Or, ad profit > 0 if CLV > $20 
+
+          - Long-term mentality justifies increased ad budget  
+
+- Or, ad profit > 0 if CLV > $20 *and* if the customer would not have purchased otherwise
 
           - This is "incrementality"
           - But how would we know if they would have purchased otherwise?
@@ -78,6 +109,35 @@ Publishers sell "Opportunites to See", not "Exposures" ; see [Viewability](https
 * [This R Script](https://drive.google.com/file/d/1NuHbXi8QNVkaJQ7QXBWiHqHfvtUaXlCC/view?usp=sharing){target="_blank"} simulates this scenario
 :::
 
+## Classic misleading correlations {.smaller}
+
+- "Lucky socks" and sports wins
+
+          - Post hoc fallacy [1] (precedence indicates causality AKA superstition)
+
+- Commuters carrying umbrellas and rain
+
+          - Forward-looking behavior
+
+- Kids receiving tutoring and grades
+
+          - Reverse causality / selection bias
+          
+- Ice cream sales and drowning deaths
+
+          - Confounding variables
+
+- Correlations are measurable & usually predictive, but hard to interpret causally
+
+          - Correlation-based beliefs are hard to disprove and therefore sticky
+          - Correlations that reinforce logical theories are especially sticky
+          - And let's acknowledge: Correlation-based beliefs are often correct!
+          - Note, examples:explanations are not 1:1 
+
+::: aside
+[[1](https://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc){target="_blank"}]
+:::
+ 
 ## 
 
 ![](images/BingRevenueTooHighTreatment.png){fig-align="center" height=7in}
@@ -108,7 +168,7 @@ be pushing the truck instead.
 :::
  
 ::: aside
-[source](https://s3.amazonaws.com/fieldexperiments-papers2/papers/00779.pdf)
+[source](https://s3.amazonaws.com/fieldexperiments-papers2/papers/00779.pdf){target="_blank"}
 :::
  
 # Agenda
@@ -124,7 +184,8 @@ be pushing the truck instead.
 ![](images/4typesofanalytics.png){fig-align="center" width=9in}
 
 ::: aside
--   Causality matters for diagnostic and prescriptive analytics, not descriptive or predictive
+- Causality matters for diagnostic and prescriptive analytics, not descriptive or predictive
+- Correlations are descriptive analytics
 :::
 
 ## Causal Inference
@@ -171,8 +232,9 @@ be pushing the truck instead.
 
 ## So what can we do? {.smaller}
 
-1. Experiment. Randomize $T_i$ and estimate $\frac{\partial Y_i}{\partial T_i}$ as avg  $Y_i(T_i=1)-Y_i(T_i=0)$
+1. Experiment. Randomize $T_i$ and estimate $\frac{\partial Y_i}{\partial T_i}$ as avg $Y_i(T_i=1)-Y_i(T_i=0)$
 
+        - Called the "Average Treatment Effect"
         - Creates new data; costs time, money, attention; deceptively difficult to design and then act on
 
 2. Use assumptions & data to estimate a "quasi-experimental" average treatment effect using archival data
@@ -181,7 +243,7 @@ be pushing the truck instead.
 
 3. Use correlations: Assume past treatments were assigned randomly, use past data to estimate $\frac{\partial Y_i}{\partial T_i}$
 
-        - Easiest approach; but T is only randomly assigned when we run an experiment, so what exactly are we doing here?
+        - Easier than 1 or 2; but T is only randomly assigned when we run an experiment, so what exactly are we doing here?
 
 4. Fuhgeddaboutit, go with the vibes, do what we feel
 
@@ -203,7 +265,7 @@ be pushing the truck instead.
         
 ## Ad/sales example: Experiment {.scrollable .smaller}
 
-1. Randomly assign ads to customer groups on a platform; measure sales in each group, e.g. [Link](https://www.facebook.com/business/learn/lessons/how-to-make-your-ads-more-effective){target="_blank"}
+1. Randomly assign ads to customer groups on a platform; measure sales in each group
 
         - Often called "incrementality" in ad/sales context
 
@@ -221,6 +283,31 @@ be pushing the truck instead.
 
           RoAS = Return on Ad Spend. Usually, RoAS = Sales / AdSpend. Sometimes, =(Sales-AdSpend)/AdSpend
 
+## Experimental necessary conditions{.smaller}
+
+1. Stable Unit Treatment Value Assumption (SUTVA)
+
+        - Treatments do not vary across units within a treatment group
+        - One unit's treatment does not change other units' potential outcomes, i.e. treatments in one group do not affect outcomes in another group
+        - Often violated when treated units interact on a platform
+        
+2. Observability
+
+        - Non-attrition, i.e. unit outcomes remain observable
+        
+3. Compliance
+
+        - Treatments assigned are treatments received
+        
+4. Statistical Independence
+
+        - Random assignment of treatments to units
+        
+::: aside
+- There are partial solutions to some nec'y condition violations
+- See [List (2025)](https://s3.amazonaws.com/fieldexperiments-papers2/papers/00792.pdf){target="_blank"} for much more
+:::
+
 ## 2. Ad/sales example: Experiment {.scrollable}
 
 Key issues for any experimental design: 
@@ -231,10 +318,10 @@ Key issues for any experimental design:
         
         - How will we act on the (uncertain) findings? Have to decide before we design
         
-        - Example: Suppose we estimate RoAS at 0.5 with a 95% confidence interval of [0.45, 0.55]. Or, suppose we estimate RoAS at 0.5, but we have a 95% confidence interval of [-2.1], 3.1]. What will we do with this information?
+        - Example: Suppose we estimate RoAS at 0.5 with a 95% confidence interval of [0.45, 0.55]. Or, suppose we estimate RoAS at 0.5, but we have a 95% confidence interval of [-2.1, 3.1]. How will we act?
         
 
-## Before quasi-experiments: Vocab {.smaller }
+## Quasi-experiments Vocab {.smaller }
 
 **Model**: Mathematical relationship between variables that simplifies reality, eg y=xb+e
 
@@ -245,6 +332,8 @@ Key issues for any experimental design:
 We say we "identify" the causal effect if we have an identification strategy that reliably distinguishes $\frac{\partial Y_i}{\partial T_i}$ from possibly correlated unobserved factors that also influence $Y_i$
 
 If you estimate a model without an identification strategy, you should interpret the results as correlational
+
+          - This is widely, widely misunderstood
 
 You can have an identification strategy without a model, e.g. <br>avg  $Y_i(T_i=1)-Y_i(T_i=0)$
 
@@ -273,13 +362,13 @@ Possibilities:
 
 ## Ad/sales: Quasi-experiments (2){.scrollable .smaller}
 
-Or, construct a "control group"
+Or, construct a "quasi-control group"
 
 - Customers or markets with similar demand trends where the firm never advertised
 
 - Competitors or complementors with similar demand trends that don't advertise
 
-Techniques like "difference in differences," "synthetic control," "regression discontinuity," "matching," and "instrumental variables" can help
+Helpful techniques: Difference in differences, Synthetic control, Regression discontinuity, Matching, Instrumental variables
 
 In each case, we try to predict our missing counterfactual data, then estimate the causal effect as observed outcomes minus predicted outcomes
 
@@ -298,13 +387,13 @@ The implicit assumption is either that there are no unobservables that influence
 
 ## Strongest case for corr(ad,sales)
 
-Corr(ad,sales) contains some truth
+Corr(ad,sales) should contain signal
 
-          - If ads cause sales, then corr(ad,sales)>0
+          - If ads cause sales, then corr(ad,sales)>0 (probably) (we assume)
 
 Some products/channels just don't sell without ads
 
-          - E.g., Direct response TV ads for 1800 #s
+          - E.g., Direct response TV ads with 1800 #s response lines
           - Career professionals tell me those #s get 0 calls until a TV ad
           - Then they get 1-5 calls per 1k viewers, lasting up to ~30 minutes
           - Then calls drop back to 0 ; so here we actually know the counterfactual
@@ -314,28 +403,15 @@ Some products/channels just don't sell without ads
 However, this argument gets pushed too far
 
           - For example, when search advertisers disregard organic link clicks when calculating search ad click profits
-
+          - Notice the converse: corr(ad,sales)>0 does not imply a causal effect of ads on sales
 
 ## Problem 1 with corr(ad,sales)
 
-Advertisers try hard to maximize ad effects
+Suppose you advertise in places where you expect a big response
 
-We select messages, media, times, contexts, target audiences, publishers (etc.) to maximize potential impact 
+            E.g. surfboards in coastal cities, not landlocked cities
 
-Sometimes, we use ML algos that max corr(ad,sales)
-
-So, if you assume that past $T_i$ was random, it's functionally equivalent to assuming that the advertising team is incompetent
-
-          - This type of selection/treatment problem is common in marketing
-
-
-## Problem 2 with corr(ad,sales)
-
-Suppose you wisely advertise only in places where you expect a big response
-
-            E.g. you advertise surfboards in coastal cities with big waves, but not in landlocked cities
-
-You'll get a big correlation between ads and sales, partly because of differences in addressable market sizes
+Corr(ad,sales) will be big, partly because of differences in addressable market sizes
 
             More ads in san diego, more surfboard sales in san diego
 
@@ -344,23 +420,69 @@ You'll get a big correlation between ads and sales, partly because of difference
 Many, many firms basically do this
 
 
+## Problem 2 with corr(ad,sales)
+
+1. Advertisers wisely select ad campaign placements, targeting and intensity to maximize impact
+
+          - Sometimes, we use ML algos that max corr(ad,sales)
+
+2. Post-campaign, we get data on ad spending and outcomes to estimate RoAS
+
+3. If we assume that past $T_i$ is random, that's the same as saying that we performed step 1 incompetently 
+
+          - Typically, T_i is only random when we run an experiment
+          - This type of selection/treatment problem is common in marketing
+          - What if ad vendor tells us to assume T_i is random?
+
 ## Problem 3 with corr(ad,sales)
+
+- How do most advertisers set ad budgets?
+
+1. Percentage of sales method, e.g. 3% or 6%
+
+2. Competitive parity
+
+3. ...others...
+
+Do you see the problem here?
+
+![](images/circularity.png){fig-align="right" width=3in}
+
+
+
+
+## Problem 4 with corr(ad,sales)
 
 - Leaves marketers powerless vs ~~big~~ colossal ad platforms
 
-- Google and Meta obfuscate ad placement algorithms
+- Google and Meta withhold data and obfuscate algorithms
 
           - How many ad placements are incremental?
           - How many ad placements target likely converters?
-          - How can advertisers react to adversarial ad price adjustments?
-          - How can advertisers evaluate brand safety, targeting, other contextual elements?
+          - How can advertisers react to adversarial ad pricing?
+          - How can advertisers evaluate brand safety, targeting, context?
 
 - Have ad platforms ever left ad budget unspent?          
 
           - Would you, if you were them?
           - If not, why not? What does that imply about incrementality?
 
-- To balance ad platform power, know your ad profits, vote with your feet
+- To balance platform power, know your ad profits, vote with your feet
+
+## U.S. v Google (2024, search case)
+
+![](images/usvgoogle2024.png){fig-align="center" width=10in}
+
+
+::: aside
+[source, pgs 76-101](https://files.lbr.cloud/public/2024-08/045110819896.pdf){target="_blank"}
+:::
+
+::: notes
+- This was written by a federal judge, an impartial observer who heard mountains of evidence on both sides
+- Note that he quotes internal google documents extensively
+- Was it legal that google tried to hide price increases from advertisers? Arguably yes, google is supposed to maximize google profits, though you could argue the practice was unethical or too short-term-focused. The case was about whether google monopolized the search engine market by excluding competitors, not whether google was supposed to be transparent about why auction prices increased. This point was simply a fact in the case that the government used to counter google's claim that it could not control ad auction prices, and therefore did not have monopolist pricing power.
+:::
 
 
 ## 
@@ -373,20 +495,17 @@ Many, many firms basically do this
 
 ##
 
-![](images/gmz_fig3.png){fig-align="center" width=10in}
-
-## 
-
-![](images/gmz_fig4.png){fig-align="center" width=7in}
-
-##
-
-![](images/gmz_fig10a.png){fig-align="center" width=10in}
+![](images/gmz_descstats.png){fig-align="center" width=10in}
 
 
 ##
 
-![](images/gmz_fig11.png){fig-align="center" width=6in}
+![](images/gmzfig2-4.png){fig-align="center" width=10in}
+
+##
+![](images/gmz2023_results.png){fig-align="center" width=10in}
+
+
 
 
 ## Why are some teams OK with corr(ad,sales)?
@@ -394,15 +513,15 @@ Many, many firms basically do this
 1. Some worry that if ads go to zero -> sales go to zero
 
         - For small firms or new products, this may be good logic
+        - Downside of lost sales may exceed downside of foregone profits
         - However, claim may imply a customer satisfaction problem. Happy customers usually share their experiences with others. If you really believe this, try a referral program
         - Plus, we can run experiments without setting ads to zero, e.g. weight tests
 
 2. Some firms assume that correlations indicate direction of causal results
 
-        - The guy in the truck bed is not pushing backwards right?
-        - But what is this assumption based on?
-        - Direction is only part of the picture; what about effect size?
-        - Unfortunately, if it's hard to get a causal estimate, then this assumption is probably ill founded
+        - The guy in the truck bed is pushing forwards right?
+        - Biased estimates might lead to unbiased decisions
+        - But direction is only part of the picture; what about effect size?
 
 
 ## Why are some teams OK with corr(ad,sales)?
@@ -412,34 +531,35 @@ Many, many firms basically do this
         - CFO asks for proof that ads work
         - CMO asks ad agencies, platforms & marketing team for proof
         - CMO sends proof to CFO ; We all carry on
-        - Things may change if ad effects team reports to CFO
 
 4. Few rigorous analytics cultures or ex-post checks
 
-        - Downside of lost sales may exceed downside of foregone profits
+        - In some cultures, ex-post checks can get personal 
+
 
 5.Estimating causal effects of ads can be pretty difficult
 
         - Many firms lack expertise, patience, execution skill
         - Ad/sales tests may be statistically inconclusive, especially if small
-        - Tests are often designed without subsequent actions in mind
+        - Tests are often designed without subsequent actions in mind, then fail to inform future decisions
 
 ## Why are some teams OK with corr(ad,sales)?
 
 6. Platforms often provide correlational ad/sales estimates
 
-        - Which one do you think is larger, correlational or experimental ad effect estimates?
+        - Which is larger, correlational or experimental ad effect estimates?
         - Which one would most client marketers prefer?
         - Platform estimates are typically "black box" without neutral auditors
         - Sometimes platforms respond to marketing executive demand for good numbers
         - "Nobody ever got fired for buying [famous platform brand here]"
 
-7. Historically, most advertising work was done by agency professionals
+7. Historically, agencies usually estimated RoAS
 
         - Agency compensation usually relies on spending, not incremental sales
         - Principal/agent problems are common
         - "Advertising attribution" is all about maximizing credit to ads
-        - These days, most marketers have in-house agencies, and split work
+        - These days, more marketers have in-house agencies, and split work
+        - Should adFX team report to CFO or CMO?
 
 
 ## 
@@ -453,29 +573,9 @@ Many, many firms basically do this
 
           - I believe we're a few years into a generational shift
           - However, corr(ad,sales) is not going away
-          - More like podcasts v AM radio than like streaming v CDs
+          - Union(correlations, experiments) should exceed either alone
 
-##
 
-![](images/adsalesratios2024.png){fig-align="center" width=5in}
-
-- Typical net margin: 8-10% ([see Damodaran](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/margin.html){target="_blank"})
-- Ads finance information production
-
-::: aside
-[SAI Books source](https://saibooks.com/advertising-sales-ratios/){target="_blank"}
-:::
-::: notes
-[also relevant](https://www.rab.com/research/10014.pdf){target="_blank"}
-:::
-
-## 
-
-![](images/hawksem.png){fig-align="center" width=7in}
-
-::: aside
-- Right question: what % of sales to spend on experiments to learn to get more sales, then use incremental returns & risk to inform the budget
-:::
 
 
 ## Marketing Mix Model {.smaller}
@@ -488,41 +588,43 @@ Many, many firms basically do this
           - E.g., suppose we increase price & ads at the same time
           - Or, suppose ads increased demand, and then inventory-based systems raised prices
 
-- A "media mix model" quantifies numerous advertising efforts and relates them to sales
+- A "media mix model" quantifies numerous advertising efforts & relates them to outcomes
 
           - For example, suppose the brand bought ads from 000s of publishers
-          - Confusingly, both abbreviated MMM and often feature similar structures
+          - Confusingly, both abbreviated MMM (or mMM) and often feature similar structures
 
 - MMM goal is to quantify past marketing mix effects, to better inform future efforts
 
 
 ## MMM elements {.smaller}
 
-Typically, MMM uses geo/time data
+Typically, MMM uses market/time data
 
           - Outcome: usually sales. Could include more funnel metrics (visits, leads, ...)
           - Predictors: Marketing mix factors under our control, plus competitor variables, seasonality, macroeconomic factors, + any other demand shifters
 
-Model structure is usually some type of panel regression, vector autoregression, or bayesian model
+Model structure is usually some type of panel regression, vector autoregression, bayesian model, or machine learning model
 
-          - Often includes lags, interactions, and other nonlinear terms
+          - Often includes lags, nonlinear ad effects, interactions between variables
           - Regressions typically estimate marginal effects, not average effects
           - Nonlinearities built into the model, such as Inc or Dec returns to ad spend, can drive key results
 
 MMM often used to retrospectively evaluate advertising media and copy, advertising interactions, and inform future ad budgets
 
-          - MMM can be used for prediction but should be calibrated appropriately
+          - MMM coefficient estimation requires sufficient variation in marketing actions
 
 
-## MMM Challenges
+## MMM Considerations {.smaller}
 
-- Without experimental data, MMM results are correlational
+- MMM results are correlational without experiments or quasi-experimental identification strategy
 
-- Data availability, accuracy and granularity are all critical
+- Data availability, accuracy, granularity and refresh rate are all critical
 
 - MMM requires sufficient variation in predictors, else it cannot estimate coefficients
 
 - "Model uncertainty" :  Results can be strongly sensitive to modeling choices
+
+- MMM is gaining traction as digital privacy rules limit user data: E.g. [Google's Meridian](https://developers.google.com/meridian){target="_blank"} or [Meta's Robyn](https://facebookexperimental.github.io/Robyn/){target="_blank"}
 
 - For much more, see this [MSI White Paper](https://github.com/kennethcwilbur/website/raw/master/MSI-MMM-Blue-Ribbon-Panel-Report-Updated.pdf){target="_blank"} or the [MMM Wikipedia article](https://en.wikipedia.org/wiki/Marketing_mix_modeling){target="_blank"}
           
@@ -546,48 +648,49 @@ MMM often used to retrospectively evaluate advertising media and copy, advertisi
 
 ## 
 
-![](images/li1.png){fig-align="center" width=6in}
+![](images/li1.png){fig-align="center" width=4in}
 
-## 
 
-![](images/li2.png){fig-align="center" width=11in}
+![](images/li2.png){fig-align="center" width=10in}
 
 ::: notes
 It's interesting that comments mainly came from those with little to lose
 :::
 
 
-## Ken's take
+## Ken's take {.smaller}
 
-- Converting correlational efforts to incremental is a resume headline and interesting challenge
+- Adopting incremental methods is a resume headline & interesting challenge
 
-          - Suggests a narrow view of experiments or how to act on them
-          - Understanding that view is a first step toward addressing it
-          - Also might suggest an ad agency background
-
+          - Team may have a narrow view of experiments or how to act on them
+          - Understanding that view is the first step toward addressing it
+          
 - Correlational + Incremental > Either alone
 
-          - What version of incrementality might they value?
+          - What incrementality might be valuable? What's our hardest challenge?
+          - What quasi-experimental measurement opportunities exist?
+          - Can we estimate the relationship between incremental and correlational KPIs?
           
 - Going-dark design
 
           - Turn off ads in (truly) random 10% of places/times; nominally free
-          - Compare measured sales to ex-ante modeled predictions
-          - Can that comparison improve our model & motivate more experiments?
+          - How does going-dark result compare to correlational model's predicted sales?
+          - Can we improve the model & motivate more informative experiments?
           
 - If structural incentives misalign, consider a new role
 
-          - Life is too short, do something meaningful          
+          - It's hard to reform a culture unless you're in the right position 
+          - Life is short, do something meaningful          
 
 ## Takeaways
 
-- Fundamental Problem of Causal Inference: We can't observe all data needed to optimize actions. This is a missing-data problem
+- Fundamental Problem of Causal Inference: <br>We can't observe all data needed to optimize actions. <br>This is a missing-data problem, not a modeling problem.
 
-- Approaches: Experiments, Quasi-experiments, Correlations, Ignore
+        - Experiments, Quasi-experiments, Correlations, Ignore
 
 - Experiments are the gold standard, but are costly and difficult to design, implement and act on
 
-- Ad effects are subtle but that does not necessarily imply unprofitability
+- Ad effects are subtle but that does not imply unprofitable
 
 ![](images/recap.png){fig-align="right" width="2in"}
 
@@ -599,10 +702,12 @@ It's interesting that comments mainly came from those with little to lose
 
 -   [Inefficiencies in Digital Advertising Markets](https://arxiv.org/abs/1912.09012){target="_blank"}: Discusses digital RoAS estimation challenges and remedies
 
+- [Your MMM is Broken](https://arxiv.org/abs/2408.07678){target="_blank"}: Nonlinear and Time-varying Effects in MMM
+
 -  [The Power of Experiments](https://direct.mit.edu/books/book/5468/The-Power-of-ExperimentsDecision-Making-in-a-Data){target="_blank"}: Goes deep on digital test-and-learn considerations
 
 - [New Developments in Experimental Design and Analysis
- (2024)](https://www.youtube.com/watch?v=CMO2NsxQXt4) by Athey & Imbens
+ (2024)](https://www.youtube.com/watch?v=CMO2NsxQXt4){target="_blank"} by Athey & Imbens
 
 - [Mostly Harmless Econometrics](https://www.amazon.com/Mostly-Harmless-Econometrics-Empiricists-Companion/dp/0691120358){target="_blank"}: Covers quasi-experimental techniques
 
