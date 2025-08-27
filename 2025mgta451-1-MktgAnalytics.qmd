@@ -1,0 +1,351 @@
+---
+title: "Intro to Marketing"
+subtitle: "UCSD MGTA 451-Marketing"
+author: "Kenneth C. Wilbur"
+format: 
+  revealjs:
+    theme: default
+    auto-stretch: true 
+    slide-number: c 
+resource-path: ["G:/My Drive/aaaCURRENT/mgta451mktg/chats/images","."]
+---
+
+# Agenda
+
+Day 1: Intro to Marketing, Quiz 1, Customer Interview Exercise
+
+Day 2: Causality & Advertising, Quiz 2, MMM Exercise
+
+## 
+
+![](images/lettuce.png){fig-align="center" width="8in"}
+
+## 
+
+![](images/o5pro_misconceptions.png){fig-align="center" width="8in"}
+
+
+## 
+
+![](images/ama_mktg_def.png){fig-align="center" width="9in"}
+
+::: aside
+My version: <br> The art of profitably attracting, satisfying, retaining and developing customers
+:::
+
+## 
+
+"Make something people want."
+
+![](images/salt.png){fig-align="right" width="2in"}
+
+```         
+"This is probably the thing we see wrong with Y Combinator apps most frequently, is that people have not thought about the market first, and what people want first."
+```
+
+# 
+
+![](images/CBinsights2021.png){fig-align="center" height="6in"}
+
+::: aside
+[Analysis](https://www.cbinsights.com/research/report/startup-failure-reasons-top/){target="\"_blank"} based on 111 startup postmortems written by founders
+:::
+
+## Is it hard to manage customer value?
+
+- Customers may not know (not their job)
+
+- Value may be confounded with attitudes, beliefs, <br>limited information
+
+- Valuation may be malleable, socially influenced, shifting
+
+- Indicators are often incomplete and biased (e.g., reviews)
+
+- Easy to misinterpret available data 
+
+- CV measurement is not always prioritized
+
+::: aside
+You can measure and manage customer value, with discipline and focus
+:::
+
+## 
+
+![](images/hbr-whystartupsfail.png){fig-align="center" height="6in"}
+
+::: notes
+On the topic of prioritization: Blank argues that founders should prioritize customer value measurement before product development
+:::
+
+## 
+
+![](images/whatdomarketersdo.png){fig-align="center" width="10in"}
+
+::: aside
+Marketers need to be the company's customer experts<br> Often, marketers need to advocate for customer interests internally
+:::
+
+## 
+
+The only respectable marketing objective: Long-term profits
+
+![](images/callsanta.png){fig-align="center" width="6in"}
+
+::: aside
+Long-term orientation aligns marketer's interest with customer's<br> Keeping a customer is far cheaper than attracting a new customer <br> If you can't retain the customers you have, acquiring new customers is unlikely to help much
+:::
+
+## 
+
+![](images/google-meta.png){fig-align="center" width="9in"}
+
+::: aside
+[source](https://archive.ph/AVRL9){target="_blank"}
+:::
+
+::: notes
+-   It's probably OK that youtube (an advertising service) sold ads to meta (a client)
+-   But is it OK to target users on the basis of missing targeting data like age?
+-   And is it OK to say your safeguards worked under these conditions?
+-   And why cancel the project if the safeguards worked?
+-   And why aren't you enforcing your own standards prior to this incident?
+-   And why is the right repsonse more training for sales staff, rather than actually enforcing your standards?
+-   So many questions...
+:::
+
+## 
+
+"Marketing is too important to be left to the marketing people."<br>-David Packard, HP
+
+![](images/packard.jpg){fig-align="right" width="3in"}
+
+::: aside
+What do you think he meant?
+:::
+
+## 
+
+![](images/cmos-responsible.png){fig-align="center" width="9in"}
+
+## Traditional Marketing Frameworks: Mainly Vibes, but still Important
+
+-   Situation analysis: 3/4/5 C's
+
+    ```         
+        - Customer, Competitor, Company / Context / Collaborators
+    ```
+
+-   Strategic decisions: STP
+
+    ```         
+        - Segmentation, Targeting, Positioning
+    ```
+
+-   Tactical decisions: 4/.../10 P's, AKA the "Marketing Mix"
+
+    ```         
+        - Product, Price, Place, Promotion
+    ```
+
+-   Brand equity
+
+    ```         
+        - Brand awareness, Brand associations, Perceived quality, Brand loyalty
+    ```
+
+## Modern Marketing Frameworks: <br>Mostly Empirical
+
+-   Purchase funnel aka AIDA aka Customer journey
+
+    ```         
+        - Attention, Interest, Desire, Conviction, Action, Satisfaction
+        - Visit, Consider, Purchase, Retention, Advocacy
+        
+    ```
+
+-   Customer lifetime value
+
+    ```         
+        - Acquisition, Retention, Loyalty, Development, Referrals
+    ```
+
+-   Marketing mix modeling, AKA Media mix modeling
+
+    ```         
+        - Regression analysis to estimate marketing mix effects on sales
+        - Owned media, Earned Media, Paid Media
+    ```
+
+-   Heterogeneity, Targeting & Personalization
+
+    ```         
+        - Experience, needs, perceptions, wtp, purchases, recommendations, reviews
+    ```
+
+## 
+
+![](images/mrbeast_funnel.png){fig-align="center" width="10in"}
+
+::: aside
+[source](https://drive.google.com/file/d/1pMS7mHWJ-lqn1BP0iReU83dGLhSXlmL3/view?usp=drive_link){target="_blank"}
+:::
+
+::: notes
+MrBeast's onboarding PDF for new employees leaked The first topic is employee quality and effort The second topic is a simple marketing funnel: CTR, AVD, AVP. CTR is the first thing they focus on, they won't greenlight a video without a compelling title & thumbnail that (a) they think will go viral, and (b) is true to video content (else it harms AVD) AVD is what they prioritize second, because are in the business of attracting viewer attention in order to max their ad revenue payout These 3 metrics are how they evaluate video content success ex post
+:::
+
+## 
+
+![](images/netflix-personalizing.png){fig-align="center" width="10in"}
+
+::: aside
+[source](https://web.archive.org/web/20240000000000*/https://www.theverge.com/24182520/netflix-co-ceo-memo-ads-subscription-price-decoder-podcast-interview){target="_blank"}
+:::
+
+## Personalization Profit Impact
+
+Alibaba personalizes product recommendations based on demographics, past clicks, past purchases, etc.
+
+AB test: Randomly turned off personalization for 555,800 visitors
+
+      - Goal was to predict restrictive privacy policy effects
+
+Click-throughs fell 75%, visits fell 33%, gross spending fell 81%
+
+      - Helps explain why data-privacy policies do not have universal support
+
+::: aside
+[source](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3962157){target="_blank"}
+:::
+
+## Customer Insights
+
+-   Market research: Create customer data 
+
+    ```         
+        - Interviews, Focus, groups, Surveys, Experiments, Observations
+    ```
+
+-   Conjoint analysis: Create and use customer data
+
+    ```         
+        - Generate stated-preference data trading off attributes, price
+        - Quantifies how potential attributes affect demand and profits
+        - Can predict competitor response and proactive strategy
+        - Multiple limitations, but powerful and popular
+    ```
+
+-   Net Promoter Score, Reviews
+
+    ```         
+        - NPS: "How likely are you to recommend this product to a friend?"
+        - Simplistic but powerful indicator of customer satisfaction
+        - Helps to identify most & least important aspects of value proposition, pain points, misunderstandings, segmentation, opportunities to improve
+        - Reviews are super important, but also : truncated distribution, non-representative, fake-able
+    ```
+
+## 
+
+“Our core business is connected with the customers’ needs and we will not be able to satisfy them if we don’t have a deep sense of empathy.”
+
+![](images/satya.jpg){fig-align="right" width="3in"}
+
+## Sales
+
+-   Sales is the primary marketing channel in B2B 
+
+```
+B2B marketing teams are smaller than B2C marketing teams
+```
+
+-   What do good salespeople earn so much money?
+
+    ```         
+        - profit impact is directly observable
+        - educate customers, negotiate, even act as customer agents
+        - enable customer needs discovery & product customization 
+        - enable customer risk mitigation & service
+        - build relationships & trust, help generate and develop warm leads
+    ```
+
+-   Marketing dept usually generates and prioritizes leads, <br>then constrains & supports sales
+
+-   How do marketing and sales usually interact?
+
+    ```         
+        - What role do analytics play in sales?
+    ```
+
+## Bottom line
+
+Advertising & sales cannot fix a broken value proposition, misunderstanding of consumer needs, unsustainable competitive position, or absence of customer trust
+
+```         
+Start with customer value first, then monitor and test as market evolves
+```
+
+Marketing strategy == sustainable value proposition vs. competitors based on the market's heterogeneous customer needs, perceptions and behaviors
+
+Advertising & sales can implement a good strategy
+
+```         
+      - Without strategy, we're shooting in the dark, likely wasting money
+      - This is why marketing has to be more than just ads & sales
+```
+
+## Takeaways
+
+-   Customers keep the lights on
+
+    ```         
+    - Customers might buy if they trust the product will meet their needs 
+    ```
+
+-   Good marketing understands and profitably meets customer needs to maximize long-run profits
+
+    ```         
+    - Ads and sales require a compelling strategy to be profitable
+    ```
+
+-   Long-term focus aligns customer and company interests, resolves most ethical problems
+
+![](images/recap.png){fig-align="right" width="2in"}
+
+## Going deeper
+
+-   [Decoupling](https://www.amazon.com/gp/product/152476308X){target="_blank"} by Teixeira is great
+
+-   [Kotler & Keller](https://www.amazon.com/Marketing-Management-16th-Philip-Kotler/dp/B0BSTYJCZQ){target="_blank"} is the comprehensive repository (doorstop)
+
+-   [Google](https://www.google.com/search?hl=en&q=google%20marketing%20training){target="_blank"}, [Meta](https://www.google.com/search?hl=en&q=meta%20marketing%20class){target="_blank"}, [Shopify](https://academy.shopify.com/?q=marketing#-c){target="_blank"} offer free courses
+
+    ```         
+        - Generally good content, but these classes are part of the ad seller's marketing funnel. Some important topics will be excluded
+    ```
+
+-   Seth Godin is breezy, motivational and directionally right
+
+-   [How to be good at marketing](https://www.youtube.com/watch?v=g_HPJ6KEQsM){target="_blank"} by yours truly
+
+![](images/takingoff.png){fig-align="right" width="2in"}
+
+## Exercise 1: Customer Interviews {.scrollable .smaller}
+
+You're going to conduct and write up your first customer interviews. 
+
+1.  Choose any customer need that most Rady grad students experience. Pick a customer need that interests you; other than caffeinated beverages. \[5 min\]
+
+2.  Write a 4-question interview script to learn customer need, solution, experience and value. Customize the questions for your category. Write down what you expect to learn from each question. Submit on canvas (Ex 1A, 1 per team, 100 words max). \[25 min\]
+
+*Sample: 1. Tell me about the last time you bought a **caffeinated beverage**. Why did you buy it? (Time, place, setting) 2. Please describe the purchase experience? (Retailer, price, time req'd) 3. Please describe the consumption experience? (Taste, effectiveness, speed) 4. Would you recommend it to a friend? Why or why not?*
+
+3. Each team member interviews a classmate in another group, and be interviewed by same classmate. \[30 min\]
+
+4.  Collate 3 interviews, write up what you learned, and what surprised you. Submit on canvas (Ex 1B, 1 per team, 100 words max). \[30 min\]
+
+LLM use encouraged. Time limits are strict. Debrief after. 
+
+Tips: Listen actively. Ask "why." Don't "lead the witness."
+
+To develop skills: take MGT 449 GenAI for Business, 470 Digital Disruption, 477R Consumer Behavior, 488R Applied Marketing Research
+
