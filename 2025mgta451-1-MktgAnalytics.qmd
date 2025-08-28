@@ -51,17 +51,17 @@ My version: <br> The art of profitably attracting, satisfying, retaining and dev
 [Analysis](https://www.cbinsights.com/research/report/startup-failure-reasons-top/){target="\"_blank"} based on 111 startup postmortems written by founders
 :::
 
-## Is it hard to manage customer value?
+## Customer Value: Challenges
 
-- Customers may not know (not their job)
+- Customers often don't know CV (not their job)
 
-- Value may be confounded with attitudes, beliefs, <br>limited information
+- CV often confounded with attitudes, beliefs, <br>limited information
 
-- Valuation may be malleable, socially influenced, shifting
+- CV is always subjective, often malleable & socially influenced
 
-- Indicators are often incomplete and biased (e.g., reviews)
+- CV measures are incomplete and biased (e.g., reviews)
 
-- Easy to misinterpret available data 
+- Easy to misinterpret available CV measures
 
 - CV measurement is not always prioritized
 
@@ -92,7 +92,11 @@ The only respectable marketing objective: Long-term profits
 ![](images/callsanta.png){fig-align="center" width="6in"}
 
 ::: aside
-Long-term orientation aligns marketer's interest with customer's<br> Keeping a customer is far cheaper than attracting a new customer <br> If you can't retain the customers you have, acquiring new customers is unlikely to help much
+Long-term orientation aligns marketer's interest with customer's<br> Keeping a customer is far cheaper than attracting a new customer <br> Customer retention is necessary for customer acquisition to be profitable
+:::
+
+::: notes
+Short-termism is a major driver of unethical or misleading marketing tactics
 :::
 
 ## 
@@ -101,6 +105,10 @@ Long-term orientation aligns marketer's interest with customer's<br> Keeping a c
 
 ::: aside
 [source](https://archive.ph/AVRL9){target="_blank"}
+:::
+
+::: notes
+Absence of competition is another major driver
 :::
 
 ::: notes
@@ -125,7 +133,7 @@ What do you think he meant?
 
 ## 
 
-![](images/cmos-responsible.png){fig-align="center" width="9in"}
+![](images/cmos-responsible2.png){fig-align="center" width="9in"}
 
 ## Traditional Marketing Frameworks: Mainly Vibes, but still Important
 
@@ -212,7 +220,7 @@ AB test: Randomly turned off personalization for 555,800 visitors
 
 Click-throughs fell 75%, visits fell 33%, gross spending fell 81%
 
-      - Helps explain why data-privacy policies do not have universal support
+      - Helps explain why many businesses oppose data-privacy rules 
 
 ::: aside
 [source](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3962157){target="_blank"}
@@ -220,13 +228,13 @@ Click-throughs fell 75%, visits fell 33%, gross spending fell 81%
 
 ## Customer Insights
 
--   Market research: Create customer data 
+-   Market research: Creates customer data 
 
     ```         
         - Interviews, Focus, groups, Surveys, Experiments, Observations
     ```
 
--   Conjoint analysis: Create and use customer data
+-   Conjoint analysis: Empirical decisionmaking framework
 
     ```         
         - Generate stated-preference data trading off attributes, price
@@ -258,7 +266,7 @@ Click-throughs fell 75%, visits fell 33%, gross spending fell 81%
 B2B marketing teams are smaller than B2C marketing teams
 ```
 
--   What do good salespeople earn so much money?
+-   Why do great salespeople earn so much money?
 
     ```         
         - profit impact is directly observable
@@ -268,7 +276,7 @@ B2B marketing teams are smaller than B2C marketing teams
         - build relationships & trust, help generate and develop warm leads
     ```
 
--   Marketing dept usually generates and prioritizes leads, <br>then constrains & supports sales
+-   Marketing dept manages brand, sources and prioritizes leads, then supports & constrains sales
 
 -   How do marketing and sales usually interact?
 
@@ -276,7 +284,7 @@ B2B marketing teams are smaller than B2C marketing teams
         - What role do analytics play in sales?
     ```
 
-## Bottom line
+## Marketing truisms
 
 Advertising & sales cannot fix a broken value proposition, misunderstanding of consumer needs, unsustainable competitive position, or absence of customer trust
 
@@ -298,16 +306,16 @@ Advertising & sales can implement a good strategy
 -   Customers keep the lights on
 
     ```         
-    - Customers might buy if they trust the product will meet their needs 
+    - The only 3 ways to generate revenue are to attract, retain and develop customers
     ```
 
--   Good marketing understands and profitably meets customer needs to maximize long-run profits
+-   Great marketing creates customer value in order to maximize long-run profits
 
     ```         
-    - Ads and sales require a compelling strategy to be profitable
+    - Ads and sales require a compelling strategy to avoid reducing profits
     ```
 
--   Long-term focus aligns customer and company interests, resolves most ethical problems
+-   Long-term focus aligns most customer and company interests, avoids ethical problems
 
 ![](images/recap.png){fig-align="right" width="2in"}
 
@@ -315,7 +323,7 @@ Advertising & sales can implement a good strategy
 
 -   [Decoupling](https://www.amazon.com/gp/product/152476308X){target="_blank"} by Teixeira is great
 
--   [Kotler & Keller](https://www.amazon.com/Marketing-Management-16th-Philip-Kotler/dp/B0BSTYJCZQ){target="_blank"} is the comprehensive repository (doorstop)
+-   [Kotler et al.](https://www.amazon.com/Marketing-Management-16th-Philip-Kotler/dp/B0BSTYJCZQ){target="_blank"} is the comprehensive repository (doorstop)
 
 -   [Google](https://www.google.com/search?hl=en&q=google%20marketing%20training){target="_blank"}, [Meta](https://www.google.com/search?hl=en&q=meta%20marketing%20class){target="_blank"}, [Shopify](https://academy.shopify.com/?q=marketing#-c){target="_blank"} offer free courses
 
@@ -328,24 +336,24 @@ Advertising & sales can implement a good strategy
 -   [How to be good at marketing](https://www.youtube.com/watch?v=g_HPJ6KEQsM){target="_blank"} by yours truly
 
 ![](images/takingoff.png){fig-align="right" width="2in"}
-
+ 
 ## Exercise 1: Customer Interviews {.scrollable .smaller}
 
 You're going to conduct and write up your first customer interviews. 
 
-1.  Choose any customer need that most Rady grad students experience. Pick a customer need that interests you; other than caffeinated beverages. \[5 min\]
+1.  Choose any customer need that most Rady grad students experience. Pick a customer need that interests you, other than caffeinated beverages. \[5 min\]
 
 2.  Write a 4-question interview script to learn customer need, solution, experience and value. Customize the questions for your category. Write down what you expect to learn from each question. Submit on canvas (Ex 1A, 1 per team, 100 words max). \[25 min\]
 
-*Sample: 1. Tell me about the last time you bought a **caffeinated beverage**. Why did you buy it? (Time, place, setting) 2. Please describe the purchase experience? (Retailer, price, time req'd) 3. Please describe the consumption experience? (Taste, effectiveness, speed) 4. Would you recommend it to a friend? Why or why not?*
+*Sample: 1. Tell me about the last time you bought a **caffeinated beverage**. Why did you buy it? (Motivation, context) 2. Describe the purchase experience. (Place, consideration set, price) 3. Please describe the consumption experience. (Taste, effectiveness, etc <-- CV) 4. Would you recommend it to a friend? Why or why not? (Satisfaction)*
 
 3. Each team member interviews a classmate in another group, and be interviewed by same classmate. \[30 min\]
 
-4.  Collate 3 interviews, write up what you learned, and what surprised you. Submit on canvas (Ex 1B, 1 per team, 100 words max). \[30 min\]
+4.  Collate interviews, write up what you learned, and what surprised you. Submit on canvas (Ex 1B, 1 per team, 100 words max). \[30 min\]
 
 LLM use encouraged. Time limits are strict. Debrief after. 
 
-Tips: Listen actively. Ask "why." Don't "lead the witness."
+Tips: Open-ended questions only. Listen actively. Ask "why." Don't "lead the witness." 
 
-To develop skills: take MGT 449 GenAI for Business, 470 Digital Disruption, 477R Consumer Behavior, 488R Applied Marketing Research
+To develop skills: take MGT 470 Digital Disruption, 477R Consumer Behavior, 488R Applied Marketing Research, 495 GenAI for Business 
 
