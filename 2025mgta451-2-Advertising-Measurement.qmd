@@ -7,6 +7,8 @@ format:
     theme: default
     slide-number: c
     chalkboard: true
+    pdf-max-pages-per-slide: 1  # avoid multi-page slides
+    pdf-separate-fragments: false
 editor: visual 
 ---
 
@@ -17,7 +19,7 @@ editor: visual
 -   Fundamental Problem of Causal Inference
 -   Advertising Measurement
 -   Correlational Advertising Measurement
--   Advertising Experiments & Quasi-experiments
+-   Causal Advertising Measurement
 -   Industry practices
 -   Marketing Mix Models
 -   Career considerations
@@ -93,9 +95,8 @@ One reason ad sellers are so profitable is programmatic advertising, which uses 
 :::
 
 ::: notes
-The automation benefit is pretty obvious, as it speeds things up compared to manual processing. The optimization is less obvious but likely even more consequential, as algorithms can be designed to incorporate automated test-and-learn strategies using conversion data. 
+The automation benefit is pretty obvious, as it speeds things up compared to manual processing. The optimization is less obvious but likely even more consequential, as algorithms can be designed to incorporate automated test-and-learn strategies using conversion data.
 :::
-
 
 ## 
 
@@ -107,9 +108,7 @@ The automation benefit is pretty obvious, as it speeds things up compared to man
 
 ::: notes
 Google Pmax is the ultimate expression of programmatic advertising. Google will decide where, when and how to spend your money for you, then tell you how well it did. Launched in 2021; Over 1 million advertisers served by 2025. Don't sweat the details!
-
 :::
-
 
 ## 
 
@@ -117,7 +116,7 @@ Google Pmax is the ultimate expression of programmatic advertising. Google will 
 
 ::: aside
 [source](https://www.isba.org.uk/system/files/media/documents/2023-01/ISBA%20%20PwC%20programmatic%20supply%20chain%20study%20II%20%28summary%29-%2018%20January%202023.pdf){target="_blank"}
-::: 
+:::
 
 ::: notes
 This is called the "ad tech tax." Programmatic advertising turns out to be pretty expensive. Let's talk about the major players. (Note: The 2022 revision shows some different numbers and makes some different, more-complicated reporting tradeoffs. The 2023 report did not offer as much public data but the report summary showed 65% of spend getting received by publishers.)
@@ -127,7 +126,6 @@ This is called the "ad tech tax." Programmatic advertising turns out to be prett
 
 ![](images/mobile_lumascape.png){fig-align="center" width="8.5in"}
 
-
 ::: aside
 [source](https://lumapartners.com/lumascapes/)
 :::
@@ -136,6 +134,40 @@ This is called the "ad tech tax." Programmatic advertising turns out to be prett
 Luma Partners describes itself as the leading investment bank in digital. It maps markets for major types of internet marketing, internet advertising and marketing technology. Let's talk through how some of this works.
 :::
 
+## 
+
+![](images/retailmedia1.png){fig-align="center" width="5.8in"}
+  
+    - Retail media networks now 
+        - provide data for ad targeting 
+        - sell sponsored product search listings
+        - partner with publishers to sell display & video ads
+ 
+::: aside
+More discussion [here](https://archive.ph/WfdAc){target="_blank"}
+:::
+
+::: notes
+Big examples include Amazon and Walmart among others
+:::
+
+## 
+
+- Brand safety: Protect brands against negative impacts on consumer opinion associated with specific types of content [1]
+
+          - E.g., proximate to military conflict, obscenity, drugs, ...
+          - Ad verification vendors monitor ad placements
+          - Keyword blacklists and whitelists determine contextual ad bids
+          - Yet fraudulent ad sales may place brand ads in non-safe contexts
+          
+- Brand suitability: Help a brand avoid brand-inappropriate content, and identify brand-aligned content [1]
+
+          - Gray areas abound, e.g. cannabis-related content
+          - Brand safety may over-reach and defund controversial topics
+
+::: aside
+[[1]](https://www.iab.com/wp-content/uploads/2020/12/IAB_Brand_Safety_and_Suitability_Guide_2020-12.pdf){target="_blank"}. Ads have even [been found](https://www.bbc.com/future/article/20250207-how-google-amazon-and-microsoft-funnelled-ad-money-to-a-site-hosting-child-abuse-images){target="_blank"} served with csam
+:::
 
 ## 
 
@@ -177,7 +209,7 @@ Consumer attention is more scarce in some media than others
     - Across sectors, typical ad-sales ratio is 2.83\%        
     - Typical public company net margin: 8-10% 
     - So modal firm could increase EBITDA 28-35% by dropping ads: (8+2.83)/8=1.35
-    - Or could it? What would happen to top-line revenue?
+    - Or could it? What would happen to top-line revenue and cost efficiencies?
 ```
 
 ::: aside
@@ -220,30 +252,13 @@ Consumer attention is more scarce in some media than others
     ```
 
 ::: notes
-How important is that incrementality point? 
+How important is that incrementality point?
 :::
-
 
 ## 
 
 ![](images/incrementality.png){fig-align="center" width="7.5in"}
 
-
-
-## 
-
-![](images/ebay){fig-align="center" width="9in"}
-
-::: aside
-[1](https://www.iab.com/wp-content/uploads/2023/04/IAB-Prohaska-MA-Workshop_LA-04.04.23_FOR-DISTRIBUTION.pdf){target="_blank"}, [2](https://faculty.haas.berkeley.edu/stadelis/BNT_ECMA_rev.pdf){target="_blank"}
-::: 
-
-::: notes
-- A famous study run by economists at eBay randomly buying google keyword advertising in a subset of cities
-- At the time, eBay was a top-5 Google client, spending over $1 billion per year on search ads
-- Clicks on paid links went to zero, but the effect was entirely replaced with clicks on organic links
-- Interestingly, the eBay's "attributed sales" did not materially change. That led eBay to fire some of its staff
-:::
 
 ## 
 
@@ -254,9 +269,9 @@ How important is that incrementality point?
 :::
 
 ::: notes
-- Note the "17 million members" and the Paypal ownership
-- Honey had two major problems. First, its pitch to consumers is literally false, as it enabled stores to pay fees to manage the coupon codes available to consumers, and thereby avoid margin erosion. Second, it was replacing influencers' affiliate codes with its own, meaning it was literally stealing affiliate marketing fees from its own partners. This is the latest installment in a long series of attribution fraud schemes, the most famous of which is called "cookie stuffing."
-- One reason causality is important is that, if we assume all marketing is incremental, we will maximize our unproductive payouts and thereby decrease our advertising ROAS
+-   Note the "17 million members" and the Paypal ownership
+-   Honey had two major problems. First, its pitch to consumers is literally false, as it enabled stores to pay fees to manage the coupon codes available to consumers, and thereby avoid margin erosion. Second, it was replacing influencers' affiliate codes with its own, meaning it was literally stealing affiliate marketing fees from its own partners. This is the latest installment in a long series of attribution fraud schemes, the most famous of which is called "cookie stuffing."
+-   One reason causality is important is that, if we assume all marketing is incremental, we will maximize our unproductive payouts and thereby decrease our advertising ROAS
 :::
 
 # Causality
@@ -368,6 +383,44 @@ Key point here: The Correlation guy is not just silly or harmless. He's weighing
 -   Causality can help build predictive models, but predictive correlations may suffice
 :::
 
+## 
+
+In 2015 economists working at eBay reported a series of geo experiments testing how shutting off paid search ads affected search clicks, sales and attributed sales
+
+![](images/ebay1.png){fig-align="center" width="5in"}
+
+::: aside
+[source](https://drive.google.com/file/d/1SEQ8YCHFw08Z0zmdQlOoAXIJUlq5Q06q/view?usp=drive_link){target="_blank"}
+:::
+
+::: notes
+-   At the time, eBay was a top-5 Google client, spending over \$1 billion per year on search ads
+-   Clicks on paid branded links went to zero, but the effect was entirely replaced with clicks on organic branded links
+-   Interestingly, the eBay's "attributed sales" did not materially change. That led eBay to fire some of its staff
+- There are credible allegations that Google subsequently updated its organic search ranking algorithm to downrank ebay among other commercial sites 
+:::
+
+## 
+
+![](images/ebay2.png){fig-align="center" width="9in"}
+
+::: aside
+[source](https://drive.google.com/file/d/1SEQ8YCHFw08Z0zmdQlOoAXIJUlq5Q06q/view?usp=drive_link){target="_blank"}
+:::
+
+## 
+
+![](images/ebay3.png){fig-align="center" width="8in"}
+
+    - Attributed sales fell, but actual sales didn't. Hmmm
+    - These results led to changes in eBay's ad measurement 
+
+::: aside
+[source](https://drive.google.com/file/d/1SEQ8YCHFw08Z0zmdQlOoAXIJUlq5Q06q/view?usp=drive_link){target="_blank"}, [hbr writeup](https://hbr.org/2013/03/did-ebay-just-prove-that-paid){target="_blank"}. [Central Control (2025)](https://drive.google.com/file/d/1VY3tIBZhXY9OA4hk8bgUDVsp69XtQwKQ/view?usp=drive_link){target="_blank"} offers ad geo test designs & code
+::: 
+
+
+
 # Fundamental Problem of Causal Inference
 
 ## Causal Inference
@@ -400,7 +453,7 @@ Key point here: The Correlation guy is not just silly or harmless. He's weighing
 
 -   Suppose $T_i=1$ has a known cost, so $\frac{\partial \pi_i}{\partial T_i} <0$
 
-- Effect of $T_i=1$ on $\pi_i$ is $\frac{d\pi_i}{dT_i}=\frac{\partial \pi_i}{\partial Y_i}\frac{\partial Y_i}{\partial T_i}+\frac{\partial \pi_i}{\partial T_i}$
+-   Effect of $T_i=1$ on $\pi_i$ is $\frac{d\pi_i}{dT_i}=\frac{\partial \pi_i}{\partial Y_i}\frac{\partial Y_i}{\partial T_i}+\frac{\partial \pi_i}{\partial T_i}$
 
 -   We have to know $\frac{\partial Y_i}{\partial T_i}$ to optimize $T_i$ assignments
 
@@ -428,7 +481,7 @@ Key point here: The Correlation guy is not just silly or harmless. He's weighing
 [Rubin Causal Model](https://en.wikipedia.org/wiki/Rubin_causal_model){target="_blank"}
 :::
 
-## So what can we do?  {.smaller}
+## So what can we do? {.smaller}
 
 1.  Experiment. Randomize $T_i$ and estimate $\frac{\partial Y_i}{\partial T_i}$ as avg $Y_i(T_i=1)-Y_i(T_i=0)$
 
@@ -481,22 +534,30 @@ Key point here: The Correlation guy is not just silly or harmless. He's weighing
 
 ## 
 
-- *Advertising measurement* quantifies ad delivery, exposure and outcomes to improve advertising efforts
+Measurement of what?
 
-          - Delivery: Were the ads sent as agreed? Can we verify? Did humans receive them? Were frequency caps respected?
-          - Exposure: Which ads were visible? Did consumers pay attention?
-          - Outcomes: Which ads generated attributable conversions? How did unattributable conversions change?
-          - Counterfactuals: What would have happened without the advertising campaign?
-          - Implications: How to improve our next campaign?
+![](images/adv-def.png){fig-align="center" width="2in"}          
+
+          - Paid media distinct from owned media & earned media
+
+Measurement on what?
+
+          - Performance advertising: Campaigns designed to stimulate short-run measurable response. Could be any funnel stage, including awareness, information, consideration, price knowledge, visitation and sales. We should measure all funnel effects
+          
+          - Brand advertising: Campaigns designed to stimulate long-run response. Measurable in multiple ways, but measurement will usually be incomplete
 
 
-- Advertising measurement is expensive, so must *directly* inform firm choices, else likely to be unprofitable
+## 
 
-          - Should we advertise? How much to budget?
-          - How to split budget between advertising types and times?
-          - How to split budget within advertising types and times?
-          - How much to bid for which opportunities?
-          - When/where/whom to target? What to say?
+-   *Advertising measurement* quantifies ad delivery, exposure and outcomes to improve advertising efforts
+
+- Advertising measurement is hard because ad effects depend on ad content, context, timing, targeting, current market conditions, past advertising & past outcomes ; all of which change
+
+          - Shooting at a moving target
+
+-   Advertising measurement is expensive, so must *directly* inform firm choices
+
+          - We have to know how measurements will inform next steps, else measurement is wasting money
 
 ## What do we measure?
 
@@ -504,32 +565,51 @@ Most often, we measure Return on Advertising Spend (ROAS)
 
 $\frac{\text{Revenue Attributed to Ads}}{\text{Ad Spending}}$ or $\frac{\text{Revenue Attributed to Ads}-\text{Ad Spending}}{\text{Ad Spending}}$
 
-Increasingly, we report incremental ROAS (iROAS) if we have causal identification 
+Increasingly, we report incremental ROAS (iROAS) if we have causal identification
 
-          - This is because attribution is usually correlational
+```         
+      - ROAS != iROAS bc attribution is usually correlational
+```
 
-We also should measure funnel-wide KPIs, e.g. brand metrics, visits, add-to-cart, sales, revenue, ...
+We also should measure delivery and funnel-wide KPIs, e.g. brand metrics, visits, add-to-cart, sales, revenue, ...
 
-          - We usually get economies of scope in measurement
+```         
+      - We usually get economies of scope in measurement
+```
+
 
 ## Diminishing returns
 
 ![](images/diminishingreturns.png){fig-align="center" width="5.5in"}
 
-          In theory, we buy the best ad opportunities first
-          So, increasing spend should lower marginal returns ("saturation")
-          Marginal ROAS (ROAS) is the tangent to the curve
-          Nonlinearity means that ROAS != mROAS
-          We use ROAS for overall evaluation, and mROAS for budget reallocation
-          We don't necessarily want to maximize ROAS or mROAS (why not?)
-          The curve above can be S-shaped, but it's hard to prove empirically
+```         
+      In theory, we buy the best ad opportunities first
+      So, increasing spend should lower marginal returns ("saturation")
+      Marginal ROAS (mROAS) is the tangent to the curve
+      Nonlinearity means that ROAS != mROAS
+      We use ROAS for overall evaluation, and mROAS for budget reallocation
+      We don't necessarily want to maximize ROAS or mROAS (why not?)
+      The curve above can be S-shaped, but it's hard to prove empirically
+```
 
 ::: aside
-[source](https://facebookexperimental.github.io/Robyn/docs/features/){target="_blank" .smaller}
+[source](https://facebookexperimental.github.io/Robyn/docs/features/){.smaller target="_blank"}
 :::
 
 ::: notes
 We often transform spending variables, such as by exponentiating or using logarithms, in MMM estimation to estimate saturation rates
+:::
+
+## 
+
+![](images/albertsons.png){fig-align="center" width="6in"}
+
+::: aside
+[source](https://drive.google.com/file/d/1uyHTykDk3m309orrv5AKKHMzkTDDTYtM/view?usp=drive_link){target="_blank"}
+:::
+
+::: notes
+Albertsons media group reported a meta-analysis of campaigns, and how correlational ROAS covaried with common measurement choices
 :::
 
 # Correlational advertising measurement
@@ -540,11 +620,13 @@ Compare conversion rates between people exposed to ads and people not exposed to
 
 Usually reported as $\frac{Prob.\{Conversion|Ad\}}{Prob.\{Conversion|NoAd\}}$ or $\frac{Prob.\{Conversion|Ad\}-Prob.\{Conversion|NoAd\}}{Prob.\{Conversion|NoAd\}}$
 
-Lift > 1 interpreted as ads are working
+Lift \> 1 interpreted as ads are working
 
-        This is purely correlational, as it ignores all targeting efforts
-        
-        Lift can be incremental if ads are allocated randomly
+```         
+    This is purely correlational, as it ignores all targeting efforts
+    
+    Lift can be incremental if ads are allocated randomly
+```
 
 ## 2. Regression
 
@@ -568,25 +650,39 @@ In truth, past ads were only random if we ran an experiment
 
 Get individual-level data on every touchpoint for every purchaser
 
-          - Includes earned media, owned media & paid media (<--ads)
-          - Often sourced from third parties
-          
-Choose a rule to attribute purchases to touchpoints 
+```         
+      - Includes earned media (PR, reviews, organic social), owned media (website, content marketing, email) & paid media (<--ads; also, paid influencer & affiliate)
+      - Often sourced from third parties
+      
+```
 
-          - Single-touch rules: Last-touch, first-touch
-          - Multi-touch rules: Fractional credit, Shapley
-          Historically, Last-touch was popular
+Choose a rule to attribute purchases to touchpoints
+
+```         
+      - Single-touch rules: Last-touch, first-touch
+      - Multi-touch rules: Fractional credit, Shapley
+      Historically, Last-touch was popular
+```
 
 MTA algorithm searches for touchpoint parameters that best-fit the conversion data given the rule
 
-          - Credit then informs future budget allocations
-          - MTA is designed to maximize attributions
-          - MTA assumes advertising is the *sole* driver of conversions
+```         
+      - Credit then informs future budget allocations
+      - MTA is designed to maximize attributions
+      - MTA assumes advertising is the *sole* driver of conversions
+```
 
-MTA is mostly dead due to privacy and platform reporting changes 
+MTA is mostly dead due to privacy and platform reporting changes
 
-          - Zombie MTA lives on, despite signal loss
+```         
+      - Governments, platforms, browsers, OS have all restricted MTA input data for privacy
+      - Some advertisers' MTA lives on due to inertia, despite signal loss
+      - Large platforms offer MTA results within the platform
+```
 
+::: aside
+Rare exception: [Amazon Ads MTA](https://drive.google.com/file/d/1n3Jio5ggXfkzw1qCS2lmKJsm6kyPdQxA/view?usp=drive_link){target="_blank"} embeds incrementality 
+:::
 
 ## Strongest args for corr(ad,sales)
 
@@ -640,7 +736,9 @@ Many, many firms basically do this
 
 1.  Percentage of sales method, e.g. 3% or 6%
 
-          - That's why ads:sales ratios are so often measured, for benchmarking
+    ```         
+      - That's why ads:sales ratios are so often measured, for benchmarking
+    ```
 
 2.  Competitive parity
 
@@ -706,7 +804,6 @@ Do you see the problem here?
 
 ![](images/gmz2023_results.png){fig-align="center" width="10in"}
 
-
 ## Why are some teams OK with corr(ad,sales)?
 
 1.  Some worry that if ads go to zero -\> sales go to zero
@@ -735,7 +832,7 @@ Do you see the problem here?
      - CMO asks ad agencies, platforms & marketing team for proof
      - CMO sends proof to CFO ; We all carry on
      - Should adFX team report to CFO or CMO?
-     ```
+    ```
 
 4.  Few rigorous analytics cultures or ex-post checks
 
@@ -773,7 +870,6 @@ Do you see the problem here?
      - These days, more marketers have in-house agencies, and split work
     ```
 
-
 ## 
 
 ![](images/2024admeasurementtrends.png){fig-align="center" width="10in"}
@@ -783,39 +879,49 @@ Do you see the problem here?
 :::
 
 ::: notes
-Incrementality & MMM were trends 1 & 2; the only other was e-commerce metric proliferation 
+Incrementality & MMM were trends 1 & 2; the only other was e-commerce metric proliferation
 :::
 
 ## 
 
-![](images/gtrends_adexp.png){fig-align="center" width="9in"}
+![](images/gtrends_adexp.png){fig-align="center" width="7.5in"}
 
-          - I believe we're a few years into a generational shift
-          - However, corr(ad,sales) is not going away
-          - Union(correlations, experiments) should exceed either alone
-
-
+```         
+      - I believe we're a few years into a generational shift
+      - Smaller, independent ad agencies are making the most noise about incrementality
+      - However, corr(ad,sales) is not going away
+      - Union(correlations, experiments) should exceed either alone
+      - But sometimes correlational measurement is misdescribed as causal
+      - What happens when ad measurement is moved from CMO reporting to CFO?
+```
 
 # Causal advertising measurement
+
+- *Causal* means that we rule out alternate explanations
 
 ## Ad Experiments: Common Designs {.scrollable .smaller}
 
 1.  Randomly assign ads to customer groups on a platform; measure sales in each group
 
-        - Pros: AB testing is easy to understand, rules out alternate explanations
-        - Cons: Can we trust the platform's "black box"? Will we get the data and all available insights?  
-        
-2.  Randomize messages within a campaign
+    ```         
+    - Pros: AB testing is easy to understand, rules out alternate explanations
+    - Cons: Can we trust the platform's "black box"? Will we get the data and all available insights?  
+    ```
 
-3.  Randomize budget across times, places ("Geo tests")
+2.  Randomize messages within a campaign. Mine competitor messages in [ad libraries](https://indicator.media/p/a-guide-to-investigating-digital){target="_blank"} for ideas
 
-4.  Randomize budgets, bids, or consumer segments
+          - Often a great place to start
+
+3.  Randomize budget across times & places ("Geo tests")
+
+4.  Randomize bids and/or consumer targeting criteria
 
 5.  Randomize budget over platforms, publishers, behavioral targets, contexts
 
-          - Experimental design describes how we create data to enable treatment/control comparisons. Experimental data are amenable to any number of models or statistical analyses.
-          - Causal identification is a property of the data, not the model
-
+    ```         
+      - Experimental design describes how we create data to enable treatment/control comparisons. Experimental data are amenable to any number of models or statistical analyses.
+      - Causal identification is a property of the data, not the model
+    ```
 
 ## Experimental necessary conditions {.smaller}
 
@@ -867,36 +973,59 @@ Before you kick off your test ...
     
 ```
 
+## Platform experiments advisory
 
-## Productive experiments ...   {.smaller}         
+- Some advertising platforms offer on-platform experiments
 
-- serve customer interests
+- Most of them randomize ads across platform & consumers; not just consumers
 
-          - Working against customers drives customers away
-
-- live within theoretical frameworks
-
-          - Science requires hypotheses if we want to learn from tests
-          - Theoretical frameworks offer mechanisms and solutions
-
-- test quantifiable hypotheses
-
-          - Choose test size & statistical power based on hypothesis
-
-- analyze all relevant customer metrics
-
-          - Test positive & negative metrics, e.g. conversions & bounce rates
-          - Test SR & LR metrics, e.g. trial & repurchase
-          - Classic example: Pop-ups seeking email subscriptions
-
-- acknowledge possible interactions between variables
-
-          - E.g. price advertising effects will always depend on the price   
+          - Randomization occurs before ad targeting & distribution algorithms
+          - You're "treating" the algorithms that determine ad distribution, not randomly selecting consumers holding everything else constant
           
+- Prominent exception: [Ghost ads](https://drive.google.com/file/d/1V9_YHaeiwZkIp4zE3bHhvfRfa-4KrOmT/view?usp=drive_link){target="_blank"}, an ingenious system to randomly withhold ads from auctions in order to estimate causal ad effects
+          
+::: aside
+See also: [Haus blog](https://www.haus.io/blog/what-youre-actually-measuring-in-a-platform-a-b-test){target="_blank"}, [Braun & Schwartz (2025)](https://drive.google.com/file/d/11BhiE3wJqaKQ9S73Mjt1hbZJRhkvZvv5/view?usp=drive_link){target="_blank"}, [Boegershausen et al.](https://drive.google.com/file/d/1bygkM2hgmTL8fbMrebozy_LT-w4EYSOB/view?usp=sharing){target="_blank"}
+::: 
+
+## Productive experiments ... {.smaller}
+
+-   serve customer interests
+
+    ```         
+        - Working against customers drives customers away
+    ```
+
+-   live within theoretical frameworks
+
+    ```         
+        - Science requires hypotheses if we want to learn from tests
+        - Theoretical frameworks offer mechanisms and solutions
+    ```
+
+-   test quantifiable hypotheses
+
+    ```         
+        - Choose test size & statistical power based on hypothesis
+    ```
+
+-   analyze all relevant customer metrics
+
+    ```         
+        - Test positive & negative metrics, e.g. conversions & bounce rates
+        - Test SR & LR metrics, e.g. trial & repurchase
+        - Classic example: Pop-ups seeking email subscriptions
+    ```
+
+-   acknowledge possible interactions between variables
+
+    ```         
+        - E.g. price advertising effects will always depend on the price   
+    ```
+
 ::: aside
 [source](https://drive.google.com/file/d/1fcY6tdB01Dlr5UXLNFXyjCRJyvHOxXs5/view?usp=sharing){target="_blank"}
 :::
-
 
 ## Quasi-experiments Vocab {.smaller}
 
@@ -912,7 +1041,9 @@ We say we "identify" the causal effect if we have an identification strategy tha
 
 If you estimate a model without an identification strategy, you should interpret the results as correlational
 
-      - This is widely, widely misunderstood
+```         
+  - This is widely, widely misunderstood
+```
 
 You can have an identification strategy without a model, e.g. <br>$\text{avg\{Y_i(T_i=1)-Y_i(T_i=0)\}}$
 
@@ -924,11 +1055,13 @@ Goal: Find a "natural experiment" in which $T_i$ is "as if" randomly assigned, t
 
 Possibilities:
 
-          - Firm started, stopped or pulsed advertising without changing other variables, especially when staggered across times or geos
-          - Competitor starts, stops or pulses advertising
-          - Discontinuous changes in ad copy 
-          - Exogenous changes in ad prices, availability or targeting (e.g., elections)
-          - Exogenous changes in addressable market, website visitors, or other factors
+```         
+      - Firm started, stopped or pulsed advertising without changing other variables, especially when staggered across times or geos
+      - Competitor starts, stops or pulses advertising
+      - Discontinuous changes in ad copy 
+      - Exogenous changes in ad prices, availability or targeting (e.g., elections)
+      - Exogenous changes in addressable market, website visitors, or other factors
+```
 
 ## DFS TV ad effects on Google Search
 
@@ -950,6 +1083,7 @@ Helpful identification strategies: Difference in differences, Synthetic control,
 
 In each case, we try to predict our missing counterfactual data, then estimate the causal effect as observed outcomes minus predicted outcomes
 
+E.g., [Shapiro et al. (2021)](https://drive.google.com/file/d/1f3JLTvIsltKej0DDae_vkZyAOmBXI13Y/view?usp=drive_link){target="_blank"} used the county-border approach to identify excessive TV advertising 
 
 ::: aside
 [Comprehensive guide](https://psantanna.com/did-resources/){target="_blank"} to difference-in-difference methods
@@ -957,19 +1091,22 @@ In each case, we try to predict our missing counterfactual data, then estimate t
 
 ## Experiments vs. Quasi-experiments
 
-- Experimentalists and quasi-experimentalists have different beliefs, cultures & training
+-   Experimentalists and quasi-experimentalists differ in beliefs, cultures & training
 
-- Generally speaking, quasi-experiments : 
+          - not unlike bayesians v frequentists
 
-        - Always depend on untestable assumptions (as do experiments)
-        - Are bigger, faster & cheaper than experiments when valid
-        - Will lead us astray when not valid
-        - Are easy to apply without validity
-        - Fall between difficult and impossible to validate. We can evaluate treatment & control similarity on observables, but not on unobservables
-      
-- Experiments & quasi-experiments should be "yes-and," <br>not "either-or"
+-   Generally speaking, quasi-experiments :
 
-          - Strong preferences are common
+    ```         
+      - Always depend on untestable assumptions (as do experiments)
+      - Are bigger, faster & cheaper than experiments when valid
+      - Will lead us astray when not valid
+      - Are easy to apply without validity
+      - Range from difficult to impossible to validate. We can evaluate treatment & control similarity on observables, but not on unobservables
+    ```
+
+-   Experiments & quasi-experiments should be "yes-if-valid," <br>not "either-or"
+
 
 # Industry practices
 
@@ -981,28 +1118,26 @@ In each case, we try to predict our missing counterfactual data, then estimate t
 [source](https://www.google.com/intl/en_us/search/howsearchworks/how-search-works/rigorous-testing/){target="_blank"}
 :::
 
-## {.smaller}
+##  {.smaller}
 
-“To invent you have to experiment, and if you know in advance that it’s going to work, it’s not an experiment.” --Bezos, Amazon 
+“To invent you have to experiment, and if you know in advance that it’s going to work, it’s not an experiment.” --Bezos, Amazon
 
-“In a culture that prioritizes curiosity over innate brilliance, ‘the learn‑it‑all does better than the know‑it‑all.’” --Nadella, Microsoft 
+“In a culture that prioritizes curiosity over innate brilliance, ‘the learn‑it‑all does better than the know‑it‑all.’” --Nadella, Microsoft
 
 “We ship imperfect products but we have a very tight feedback loop and we learn and we get better.” --Altman, OpenAI
 
-“You do a lot of experimentation, an A/B test to figure out what you want to do.” --Chesky, Airbnb 
+“You do a lot of experimentation, an A/B test to figure out what you want to do.” --Chesky, Airbnb
 
-“The only way to get there is through super, super aggressive experimentation.” --Khosrowshahi, Uber 
+“The only way to get there is through super, super aggressive experimentation.” --Khosrowshahi, Uber
 
-“Create an A/B testing infrastructure.” Huffman, on his top priority as Reddit CEO 
+“Create an A/B testing infrastructure.” Huffman, on his top priority as Reddit CEO
 
 ::: aside
-- This list could be much longer.
-- Why do you think there is such a consensus among digital-first business leaders?
-- How do you think these firms measure their advertising?
-- What does this imply for your career?
+-   This list could be much longer.
+-   Why do you think there is such a consensus among digital-first business leaders?
+-   How do you think these firms measure their advertising?
+-   What does this imply for your career?
 :::
-
-
 
 ## Advertising experiment frequency
 
@@ -1013,19 +1148,21 @@ In each case, we try to predict our missing counterfactual data, then estimate t
 :::
 
 ## Advertising experiment effectiveness
- 
-            - Authors describe how companies' experimental practices relate to last-click conversion/ad$ metrics, and incremental conversions/ad$ in Meta experiments
-            
+
+```         
+        - Authors describe how companies' experimental practices relate to last-click conversion/ad$ metrics, and incremental conversions/ad$ in Meta experiments
+        
+```
+
 ![](images/runge2020HBR2.png){fig-align="center" width="10.5in"}
 
 ::: aside
 [source.](https://drive.google.com/file/d/1Xetwnrv6dLyhXKlTK0vYaZ5yEnB6K8iY/view?usp=sharing){target="_blank"} Results are correlational; experimentation is not randomly assigned
 :::
-            
+
 ::: notes
 These are "heat maps" which visualize 3-dimensional distributions in 2D spaces. The X axis measures each company's number of experiments run in the most recent year. The Y axis measures each company's lifetime number of experiments run. The Z axis measures last-click conversions per ad dollar (on the left) and incremental conversions per dollar in experiments (on the right). What you see is that companies with deep experimental practices, in terms of more historical experiments and more recent experiments, tend to get much better results for per ad dollar spent. This is strongly suggestive descriptive evidence.
 :::
-            
 
 ## 
 
@@ -1077,8 +1214,7 @@ Previous data was pre-2020, what about more recently?
 
 ::: aside
 [source](https://drive.google.com/file/d/1AsafqvDMIJe1BvQ7hBXB1iQiFa4uNJ5N/view?usp=sharing){target="_blank"}
-:::            
-            
+:::
 
 # Marketing Mix Models
 
@@ -1086,9 +1222,11 @@ Previous data was pre-2020, what about more recently?
 
 -   The "marketing mix" consists of the 4 P's
 
-          - E.g. product line, length and features; price & promotions; advertising, PR, social media and other marcoms; retail distribution breadth, intensity and quality
+    ```         
+      - E.g. product line, length and features; price & promotions; advertising, PR, social media and other marcoms; retail distribution breadth, intensity and quality
+    ```
 
--   A "marketing mix model" (MMM) relates sales to marketing mix variables 
+-   A "marketing mix model" (MMM) relates sales to marketing mix variables
 
     ```         
         - Idea goes back to the 1950s
@@ -1097,7 +1235,7 @@ Previous data was pre-2020, what about more recently?
         - When possible, MMM should include competitor variables also
     ```
 
--   A "media mix model" (mMM) relates sales to ads/marcom channels 
+-   A "media mix model" (mMM) relates sales to ads/marcom channels
 
     ```         
         - MMM and mMM share many models and techniques
@@ -1109,21 +1247,25 @@ Previous data was pre-2020, what about more recently?
 Pioneering works: [Magee (1953)](https://pubsonline.informs.org/doi/abs/10.1287/opre.1.2.64){target="_blank"}, [Weinberg (1956)](https://pubsonline.informs.org/doi/10.1287/opre.4.2.152){target="_blank"}, [Vidale and Wolfe (1957)](https://pubsonline.informs.org/doi/abs/10.1287/opre.5.3.370){target="_blank"}, [Lambin (1972)](https://journals.sagepub.com/doi/10.1177/002224377200900201){target="_blank"}, [Little (1972)](https://pubsonline.informs.org/doi/abs/10.1287/opre.23.4.628){target="_blank"}
 :::
 
-
-
 ## MMM components {.smaller}
 
 MMM analyzes aggregate data, usually 3-5 years of weekly or monthly intervals, usually across a panel of geos (e.g., states, counties, CMSAs)
 
-          - Aggregate data are privacy-compliant & often do not require platform participation; helps explain MMM comeback
+```         
+      - Aggregate data are privacy-compliant & often do not require platform participation; helps explain MMM comeback
+```
 
 Predictors include ad spending/exposures by ad type; outcomes measure sales, volume or revenue
 
-          - Spending data is nearly always available. Exposures can be better if measured accurately
+```         
+      - Spending data is nearly always available. Exposures can be better if measured accurately
+```
 
 MMM usually controls for (a) trends, (b) seasonality, (c) macroeconomic factors, (d) known demand shifters, (e) saturation, (f) carryover
 
-          - Sometimes accounts for interactions between push/pull channels as well
+```         
+      - Sometimes accounts for interactions between push/pull channels as well
+```
 
 Analysts use data to select model specifications under these constraints. Estimation can be frequentist, Bayesian, ML-based
 
@@ -1137,31 +1279,39 @@ MMM parameters can be interpreted causally if and only if adspend data are gener
 
 -   MMM requires sufficient variation in marketing predictors, else it cannot estimate coefficients
 
--   "Model uncertainty" : Results can be strongly sensitive to modeling choices, so we usually evaluate multiple models 
+-   "Model uncertainty" : Results can be strongly sensitive to modeling choices, so we usually evaluate multiple models
 
-- MMM results are correlational without experiments or quasi-experimental identification 
+-   MMM results are correlational without experiments or quasi-experimental identification
 
-          - Correlations can be unstable; Bayesian estimation can help regularize
-          - MMM results can be causal if you induce exogenous variation in ad spending 
+    ```         
+        - Correlations can be unstable; Bayesian estimation can help regularize
+        - MMM results can be causal if you induce exogenous variation in ad spending 
+        - MMM results can be calibrated using causal measurements
+    ```
 
--   For much more, see this [MSI White Paper](https://github.com/kennethcwilbur/website/raw/master/MSI-MMM-Blue-Ribbon-Panel-Report-Updated.pdf){target="_blank"} 
+::: aside 
+This [MSI White Paper](https://github.com/kennethcwilbur/website/raw/master/MSI-MMM-Blue-Ribbon-Panel-Report-Updated.pdf){target="_blank"} offers more MMM details; more on [causal calibration](https://sellforte.com/blog/calibrating-marketing-mix-models-with-experiments-and-attribution-data){target="_blank"} here
+:::
 
 
 ## Open-source Frameworks
 
-- Meta [Robyn](https://facebookexperimental.github.io/Robyn/){target="_blank"} (2024). Excellent [training course](){target="_blank"}
+-   Meta [Robyn](https://facebookexperimental.github.io/Robyn/){target="_blank"} (2024). Excellent [training course](){target="_blank"}
 
-          - Cool features: Causal estimate calibration, Set your own objective criteria, Smart multicollinearity handling
-          
-- Google [Meridian](https://developers.google.com/meridian){target="_blank"} (2025). Excellent [self-starter guide](https://www.thinkwithgoogle.com/_qs/documents/18498/Meridian_Playbook_1s4EUSU.pdf){target="_blank"}
+    ```         
+        - Cool features: Causal estimate calibration, Set your own objective criteria, Smart multicollinearity handling
+    ```
 
-          - Cool features: Bayesian implementation, Hierarchical geo-level modeling, reach/frequency distinctions
-          - Robyn & Meridian both include budget-reallocation modules
+-   Google [Meridian](https://developers.google.com/meridian){target="_blank"} (2025). Excellent [self-starter guide](https://www.thinkwithgoogle.com/_qs/documents/18498/Meridian_Playbook_1s4EUSU.pdf){target="_blank"}
+
+    ```         
+        - Cool features: Bayesian implementation, Hierarchical geo-level modeling, reach/frequency distinctions
+        - Robyn & Meridian both include budget-reallocation modules
+    ```
 
 Others: [PyMC-Marketing](https://www.pymc-marketing.io/en/stable/guide/mmm/mmm_intro.html){target="_blank"}, [mmm_stan](https://github.com/sibylhe/mmm_stan){target="_blank"}, [bayesmmm](https://github.com/nrhodes1451/bayesmmm){target="_blank"}, [BayesianMMM](https://github.com/leopoldavezac/BayesianMMM){target="_blank"}
 
 Also relevant: an [MMM data simulator](https://facebookexperimental.github.io/siMMMulator/){target="_blank"}
-
 
 # Career considerations
 
@@ -1218,7 +1368,7 @@ It's interesting that comments mainly came from those with little to lose
 
 -   Experiments are the gold standard, but are costly and challenging to design, implement and act on
 
--   Ad effects are subtle but that does not imply unprofitable. Measurement is required
+-   Ad effects are subtle but that does not imply unprofitable. Measurement is challenging but required to optimize profits
 
 ![](images/recap.png){fig-align="right" width="2in"}
 
